@@ -1,0 +1,206 @@
+import type { Project } from '../types';
+
+export const projectsData: Project[] = [
+  {
+    id: 1,
+    title: 'Brew & Bean Co.',
+    description: 'Complete brand identity and packaging design for artisan coffee roaster.',
+    longDescription:
+      'Brew & Bean Co. needed a brand that captured their passion for sustainable, small-batch coffee roasting. We created a warm, approachable identity featuring hand-drawn illustrations, earth-tone color palettes, and eco-friendly packaging. The rebrand increased retail partnerships by 45% and online sales by 68% in the first quarter.',
+    category: 'Branding',
+    imageUrl: 'https://picsum.photos/seed/brewbean/1200/800',
+    images: [
+      'https://picsum.photos/seed/brewbean1/1200/800',
+      'https://picsum.photos/seed/brewbean2/1200/800',
+      'https://picsum.photos/seed/brewbean3/1200/800',
+    ],
+    technologies: ['Adobe Illustrator', 'Photoshop', 'InDesign'],
+    client: 'Brew & Bean Co.',
+    date: 'January 2025',
+  },
+  {
+    id: 2,
+    title: 'FitFlow Gym',
+    description: 'Social media graphics package and brand refresh for boutique fitness studio.',
+    longDescription:
+      'FitFlow needed to stand out in a crowded fitness market with eye-catching social content. We developed a bold visual system with energetic typography, vibrant gradients, and motivational quote templates. Delivered 50+ custom graphics and templates that increased Instagram engagement by 320% over three months.',
+    category: 'Social Media',
+    imageUrl: 'https://picsum.photos/seed/fitflow/1200/800',
+    images: [
+      'https://picsum.photos/seed/fitflow1/1200/800',
+      'https://picsum.photos/seed/fitflow2/1200/800',
+      'https://picsum.photos/seed/fitflow3/1200/800',
+    ],
+    technologies: ['Figma', 'Photoshop', 'After Effects'],
+    client: 'FitFlow Gym',
+    date: 'December 2024',
+  },
+  {
+    id: 3,
+    title: 'Artisan Bakery Logo',
+    description: 'Hand-crafted logo design for family-owned bakery.',
+    longDescription:
+      'This family-run bakery wanted a logo that felt personal and timeless. We created a custom wordmark with flour-dusted textures and wheat illustrations that honor their 30-year heritage. The logo works beautifully across signage, packaging, and digital applications.',
+    category: 'Logo Design',
+    imageUrl: 'https://picsum.photos/seed/bakery/1200/800',
+    images: [
+      'https://picsum.photos/seed/bakery1/1200/800',
+      'https://picsum.photos/seed/bakery2/1200/800',
+    ],
+    technologies: ['Adobe Illustrator', 'Procreate'],
+    client: 'Artisan Bakery',
+    date: 'November 2024',
+  },
+  {
+    id: 4,
+    title: 'TechStart Conference',
+    description: 'Event branding and marketing materials for annual tech conference.',
+    longDescription:
+      'TechStart Conference needed a modern, tech-forward identity that would attract both startups and enterprise attendees. We designed the event logo, speaker badges, social media assets, email templates, and a 32-page program guide. The cohesive branding helped sell out the 500-person event six weeks early.',
+    category: 'Marketing',
+    imageUrl: 'https://picsum.photos/seed/techstart/1200/800',
+    images: [
+      'https://picsum.photos/seed/techstart1/1200/800',
+      'https://picsum.photos/seed/techstart2/1200/800',
+      'https://picsum.photos/seed/techstart3/1200/800',
+      'https://picsum.photos/seed/techstart4/1200/800',
+    ],
+    technologies: ['Figma', 'InDesign', 'Illustrator'],
+    client: 'TechStart',
+    date: 'October 2024',
+  },
+  {
+    id: 5,
+    title: 'GreenLeaf Organics',
+    description: 'Sustainable packaging design for organic skincare line.',
+    longDescription:
+      'GreenLeaf Organics was launching a new line of sustainable skincare products and needed packaging that communicated purity and environmental responsibility. We designed minimalist labels with botanical illustrations and recycled kraft paper packaging. The design won a regional sustainability award and helped GreenLeaf secure shelf space in 12 Whole Foods locations.',
+    category: 'Packaging',
+    imageUrl: 'https://picsum.photos/seed/greenleaf/1200/800',
+    images: [
+      'https://picsum.photos/seed/greenleaf1/1200/800',
+      'https://picsum.photos/seed/greenleaf2/1200/800',
+      'https://picsum.photos/seed/greenleaf3/1200/800',
+    ],
+    technologies: ['Illustrator', 'Photoshop', 'Dimension'],
+    client: 'GreenLeaf Organics',
+    date: 'September 2024',
+  },
+  {
+    id: 6,
+    title: 'Modern Real Estate',
+    description: 'Website redesign and digital branding for real estate agency.',
+    longDescription:
+      'Modern Real Estate needed a digital presence that matched their premium service. We redesigned their website with luxury aesthetics, intuitive property search, and neighborhood guides. We also created a suite of listing templates and email marketing graphics. The new site increased lead generation by 89% and reduced bounce rate by 43%.',
+    category: 'Web Design',
+    imageUrl: 'https://picsum.photos/seed/realestate/1200/800',
+    images: [
+      'https://picsum.photos/seed/realestate1/1200/800',
+      'https://picsum.photos/seed/realestate2/1200/800',
+      'https://picsum.photos/seed/realestate3/1200/800',
+    ],
+    technologies: ['Figma', 'Webflow', 'Photoshop'],
+    client: 'Modern Real Estate',
+    date: 'August 2024',
+    liveUrl: 'https://example.com/modern-real-estate',
+  },
+  {
+    id: 7,
+    title: 'The Paw Lounge',
+    description: 'Playful brand identity for upscale dog grooming salon.',
+    longDescription:
+      'The Paw Lounge wanted to position themselves as the premium choice for pet grooming without feeling stuffy. We created a sophisticated yet playful identity featuring custom paw print patterns, elegant serif typography, and a pastel color palette. Deliverables included logo, business cards, appointment cards, and window graphics.',
+    category: 'Branding',
+    imageUrl: 'https://picsum.photos/seed/pawlounge/1200/800',
+    images: [
+      'https://picsum.photos/seed/pawlounge1/1200/800',
+      'https://picsum.photos/seed/pawlounge2/1200/800',
+    ],
+    technologies: ['Illustrator', 'Photoshop'],
+    client: 'The Paw Lounge',
+    date: 'July 2024',
+  },
+  {
+    id: 8,
+    title: 'Summit Ventures',
+    description: 'Corporate identity and pitch deck design for venture capital firm.',
+    longDescription:
+      'Summit Ventures needed a brand that conveyed authority and forward-thinking innovation. We designed a bold, geometric logo with mountain symbolism, developed a sophisticated color system, and created a 40-slide pitch deck template with data visualization components. The professional presentation helped them close $15M in funding commitments.',
+    category: 'Corporate',
+    imageUrl: 'https://picsum.photos/seed/summit/1200/800',
+    images: [
+      'https://picsum.photos/seed/summit1/1200/800',
+      'https://picsum.photos/seed/summit2/1200/800',
+      'https://picsum.photos/seed/summit3/1200/800',
+    ],
+    technologies: ['Figma', 'Illustrator', 'PowerPoint'],
+    client: 'Summit Ventures',
+    date: 'June 2024',
+  },
+  {
+    id: 9,
+    title: 'Taco Fiesta Food Truck',
+    description: 'Bold vehicle wrap and menu board design for mobile food business.',
+    longDescription:
+      'Taco Fiesta needed to be visible from a block away and memorable enough that customers would hunt them down. We designed a vibrant, festival-inspired vehicle wrap with bold typography and mouth-watering food photography. Also created matching menu boards and social media templates. The truck became a local Instagram hotspot with over 2,000 tagged photos in six months.',
+    category: 'Print Design',
+    imageUrl: 'https://picsum.photos/seed/tacofiesta/1200/800',
+    images: [
+      'https://picsum.photos/seed/tacofiesta1/1200/800',
+      'https://picsum.photos/seed/tacofiesta2/1200/800',
+    ],
+    technologies: ['Illustrator', 'Photoshop'],
+    client: 'Taco Fiesta',
+    date: 'May 2024',
+  },
+  {
+    id: 10,
+    title: 'Mindful Yoga Studio',
+    description: 'Serene brand identity and wellness app UI design.',
+    longDescription:
+      'Mindful Yoga Studio was expanding from a single location to a chain and launching a companion app. We created a calming identity with zen-inspired elements, developed app screens for class booking and meditation tracking, and designed promotional materials. The cohesive brand experience increased membership retention by 34% and app downloads exceeded 5,000 in the first month.',
+    category: 'Branding & UI/UX',
+    imageUrl: 'https://picsum.photos/seed/mindful/1200/800',
+    images: [
+      'https://picsum.photos/seed/mindful1/1200/800',
+      'https://picsum.photos/seed/mindful2/1200/800',
+      'https://picsum.photos/seed/mindful3/1200/800',
+    ],
+    technologies: ['Figma', 'Illustrator', 'Framer'],
+    client: 'Mindful Yoga Studio',
+    date: 'April 2024',
+  },
+  {
+    id: 11,
+    title: 'Local Harvest Market',
+    description: 'Farmers market branding and vendor signage system.',
+    longDescription:
+      'Local Harvest Market wanted to create a unified look across all vendor booths while celebrating individual farmers. We designed a flexible signage system with modular templates, created directional wayfinding graphics, and developed a friendly mascot character. The cohesive branding increased weekly attendance by 28% and attracted 15 new vendors.',
+    category: 'Branding',
+    imageUrl: 'https://picsum.photos/seed/harvest/1200/800',
+    images: [
+      'https://picsum.photos/seed/harvest1/1200/800',
+      'https://picsum.photos/seed/harvest2/1200/800',
+    ],
+    technologies: ['Illustrator', 'InDesign'],
+    client: 'Local Harvest Market',
+    date: 'March 2024',
+  },
+  {
+    id: 12,
+    title: 'Craft Brewery Tap Room',
+    description: 'Industrial-chic interior graphics and beer label series.',
+    longDescription:
+      'This new craft brewery needed wall graphics, tap handle designs, and labels for their core beer lineup. We developed an industrial aesthetic with exposed brick textures, vintage typography, and hop illustrations. Designed 8 unique beer labels and 12 large-format wall murals. The Instagram-worthy tap room became a destination, with customers traveling from three states away.',
+    category: 'Print Design',
+    imageUrl: 'https://picsum.photos/seed/brewery/1200/800',
+    images: [
+      'https://picsum.photos/seed/brewery1/1200/800',
+      'https://picsum.photos/seed/brewery2/1200/800',
+      'https://picsum.photos/seed/brewery3/1200/800',
+    ],
+    technologies: ['Illustrator', 'Photoshop', 'InDesign'],
+    client: 'Craft Brewery',
+    date: 'February 2024',
+  },
+];
