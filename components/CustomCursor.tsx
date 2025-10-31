@@ -63,7 +63,7 @@ const CustomCursor: React.FC = () => {
           }}
         >
           <div
-            className="bg-brand-green rounded-full"
+            className="bg-brand-orange rounded-full"
             style={{
               width: `${6 - index * 0.5}px`,
               height: `${6 - index * 0.5}px`,
@@ -89,7 +89,7 @@ const CustomCursor: React.FC = () => {
           mass: 0.5,
         }}
       >
-        <div className="w-8 h-8 border-2 border-brand-green rounded-full" />
+        <div className="w-8 h-8 border-2 border-brand-orange rounded-full" />
       </motion.div>
 
       {/* Inner dot */}
@@ -107,7 +107,7 @@ const CustomCursor: React.FC = () => {
           mass: 0.2,
         }}
       >
-        <div className="w-1 h-1 bg-brand-green rounded-full" />
+        <div className="w-1 h-1 bg-brand-orange rounded-full" />
       </motion.div>
     </>
   );

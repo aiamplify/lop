@@ -40,11 +40,11 @@ const Services: React.FC = () => {
         >
           <motion.h2
             variants={textVariant(0)}
-            className="text-4xl md:text-5xl font-orbitron font-bold text-white mb-4 relative inline-block"
+            className="text-4xl md:text-5xl font-heading font-bold text-white mb-4 relative inline-block"
           >
             Our Services
             <motion.div
-              className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-green to-transparent"
+              className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-orange to-transparent"
               initial={{ scaleX: 0 }}
               animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -61,7 +61,7 @@ const Services: React.FC = () => {
           <motion.a
             href="#/services"
             variants={fadeIn('up', 0.3)}
-            className="inline-block text-brand-green font-orbitron font-bold hover:underline cursor-hover"
+            className="inline-block text-brand-orange font-heading font-bold hover:underline cursor-hover"
           >
             View All Services →
           </motion.a>
@@ -93,12 +93,12 @@ const Services: React.FC = () => {
               {/* Content */}
               <div className="relative z-10">
                 <div className="text-5xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-orbitron font-bold text-white mb-2 group-hover:text-brand-green transition-colors">
+                <h3 className="text-xl font-heading font-bold text-white mb-2 group-hover:text-brand-orange transition-colors">
                   {service.name}
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">{service.tagline}</p>
                 {service.startingPrice && (
-                  <div className="text-brand-green font-orbitron font-bold text-sm">
+                  <div className="text-brand-orange font-heading font-bold text-sm">
                     From {service.startingPrice}
                   </div>
                 )}
@@ -106,7 +106,7 @@ const Services: React.FC = () => {
 
               {/* Corner Accent */}
               <motion.div
-                className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-brand-green/0 group-hover:border-brand-green/50 transition-all duration-300"
+                className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-brand-orange/0 group-hover:border-brand-orange/50 transition-all duration-300"
                 style={{ borderRadius: '0 0.5rem 0 0' }}
               />
 
@@ -130,7 +130,7 @@ const Services: React.FC = () => {
         >
           <motion.a
             href="#/services"
-            className="inline-block relative bg-brand-green text-dark-bg px-10 py-4 font-bold font-orbitron text-lg overflow-hidden group cursor-hover"
+            className="inline-block relative bg-brand-orange text-dark-bg px-10 py-4 font-bold font-heading text-lg overflow-hidden group cursor-hover"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -148,7 +148,7 @@ const Services: React.FC = () => {
 
       {/* Decorative Element */}
       <motion.div
-        className="absolute bottom-0 left-0 w-96 h-96 bg-brand-green/5 rounded-full blur-3xl"
+        className="absolute bottom-0 left-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],

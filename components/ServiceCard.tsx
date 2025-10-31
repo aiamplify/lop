@@ -52,7 +52,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, delay = 0 }) => {
 
         {/* Animated Overlay on Hover */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-brand-green/20 via-transparent to-transparent"
+          className="absolute inset-0 bg-gradient-to-br from-brand-orange/20 via-transparent to-transparent"
           initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.4 }}
@@ -73,13 +73,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, delay = 0 }) => {
             initial={{ opacity: 0.7 }}
             animate={{ opacity: isHovered ? 1 : 0.7 }}
           >
-            <span className="text-brand-green text-sm font-orbitron tracking-wider uppercase">
+            <span className="text-brand-orange text-sm font-heading tracking-wider uppercase">
               {service.category}
             </span>
           </motion.div>
 
           <motion.h3
-            className="text-3xl font-orbitron font-bold text-white mb-3"
+            className="text-3xl font-heading font-bold text-white mb-3"
             animate={{
               color: isHovered ? '#00ff99' : '#ffffff',
             }}
@@ -92,7 +92,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, delay = 0 }) => {
 
           {/* Animated bottom accent */}
           <motion.div
-            className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-green to-green-400"
+            className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-green-400"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: isHovered ? 1 : 0 }}
             transition={{ duration: 0.3 }}
@@ -102,7 +102,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, delay = 0 }) => {
 
         {/* Corner Accent */}
         <motion.div
-          className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-brand-green/0"
+          className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-brand-orange/0"
           animate={{
             borderColor: isHovered ? 'rgba(0, 255, 153, 0.8)' : 'rgba(0, 255, 153, 0)',
           }}

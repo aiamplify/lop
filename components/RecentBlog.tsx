@@ -14,7 +14,7 @@ const RecentBlog: React.FC = () => {
     <section id="recent-blog" className="py-24 bg-black/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-white mb-4">Latest Insights</h2>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Latest Insights</h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Stay updated with our latest thoughts on design, technology, and creativity.
           </p>
@@ -28,7 +28,7 @@ const RecentBlog: React.FC = () => {
           <a
             href="#/blog"
             onClick={handleViewAll}
-            className="bg-transparent border-2 border-brand-green text-brand-green px-8 py-3 font-bold font-orbitron hover:bg-brand-green hover:text-dark-bg transition-all duration-300"
+            className="bg-transparent border-2 border-brand-orange text-brand-orange px-8 py-3 font-bold font-heading hover:bg-brand-orange hover:text-dark-bg transition-all duration-300"
           >
             View All Posts
           </a>

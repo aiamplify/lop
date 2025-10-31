@@ -37,18 +37,11 @@ const Header: React.FC = () => {
     window.location.hash = hash;
   };
 
-  const categories = [
-    'Design Trends',
-    'Tutorial',
-    'Opinion',
-    'Branding',
-  ];
-
   return (
     <motion.header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500`}
       style={{
-        backgroundColor: isScrolled ? 'rgba(10, 10, 10, 0.95)' : 'rgba(10, 10, 10, 0)',
+        backgroundColor: isScrolled ? 'rgba(26, 26, 26, 0.95)' : 'rgba(26, 26, 26, 0)',
         backdropFilter: isScrolled ? 'blur(20px)' : 'blur(0px)',
         opacity: headerOpacity,
       }}
@@ -56,9 +49,9 @@ const Header: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, type: 'spring' }}
     >
-      {/* Glowing border at bottom when scrolled */}
+      {/* Border at bottom when scrolled */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-green/50 to-transparent"
+        className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-orange/40 to-transparent"
         initial={{ opacity: 0 }}
         animate={{ opacity: isScrolled ? 1 : 0 }}
         transition={{ duration: 0.3 }}
@@ -66,85 +59,78 @@ const Header: React.FC = () => {
 
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <motion.div
-          className="text-2xl font-orbitron font-bold cursor-hover"
+          className="text-2xl font-heading font-bold cursor-hover"
           whileHover={{ scale: 1.05 }}
           transition={{ type: 'spring', stiffness: 400 }}
         >
-          <a href="#" onClick={(e) => handleHashNav(e, '')} className="flex items-center space-x-2 group">
-            <motion.span
-              className="w-3 h-3 bg-brand-green block"
-              animate={{
-                boxShadow: [
-                  '0 0 10px rgba(0, 255, 153, 0.5)',
-                  '0 0 20px rgba(0, 255, 153, 0.8)',
-                  '0 0 10px rgba(0, 255, 153, 0.5)',
-                ],
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-            <span className="text-white group-hover:text-brand-green transition-colors duration-300">
-              Quantum Insights
+          <a href="#" onClick={(e) => handleHashNav(e, '')} className="flex items-center space-x-3 group">
+            {/* Hard Hat Icon */}
+            <div className="relative">
+              <svg className="w-7 h-7 text-brand-orange" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3L4 8v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-8-5zm0 2.18l6 3.75V16c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1V8.93l6-3.75z"/>
+                <path d="M12 7c-2.21 0-4 1.79-4 4v5h8v-5c0-2.21-1.79-4-4-4zm2 7h-4v-3c0-1.1.9-2 2-2s2 .9 2 2v3z"/>
+              </svg>
+            </div>
+            <span className="text-white group-hover:text-brand-orange transition-colors duration-300 tracking-wide">
+              AI for Contractors
             </span>
           </a>
         </motion.div>
 
-        <nav className="hidden md:flex space-x-6 items-center">
+        <nav className="hidden md:flex space-x-8 items-center">
           <motion.a
             href="#"
             onClick={(e) => handleHashNav(e, '')}
-            className="relative text-gray-300 hover:text-brand-green transition-colors duration-300 font-medium cursor-hover"
+            className="relative text-gray-300 hover:text-brand-orange transition-colors duration-300 font-medium cursor-hover"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0 }}
             whileHover={{ y: -2 }}
           >
-            Home
+            Blog
             <motion.div
-              className="absolute -bottom-1 left-0 h-0.5 bg-brand-green"
+              className="absolute -bottom-1 left-0 h-0.5 bg-brand-orange"
               initial={{ width: 0 }}
               whileHover={{ width: '100%' }}
               transition={{ duration: 0.3 }}
             />
           </motion.a>
 
-          {categories.map((category, index) => (
-            <motion.a
-              key={category}
-              href={`#/category/${encodeURIComponent(category)}`}
-              onClick={(e) => handleHashNav(e, `/category/${encodeURIComponent(category)}`)}
-              className="relative text-gray-300 hover:text-brand-green transition-colors duration-300 font-medium cursor-hover"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: (index + 1) * 0.1 }}
-              whileHover={{ y: -2 }}
-            >
-              {category}
-              <motion.div
-                className="absolute -bottom-1 left-0 h-0.5 bg-brand-green"
-                initial={{ width: 0 }}
-                whileHover={{ width: '100%' }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.a>
-          ))}
+          <motion.a
+            href="#/resources"
+            onClick={(e) => handleHashNav(e, '/resources')}
+            className="relative text-gray-300 hover:text-brand-orange transition-colors duration-300 font-medium cursor-hover"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            whileHover={{ y: -2 }}
+          >
+            Resources
+            <motion.div
+              className="absolute -bottom-1 left-0 h-0.5 bg-brand-orange"
+              initial={{ width: 0 }}
+              whileHover={{ width: '100%' }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.a>
 
           <motion.a
             href="#subscribe"
             onClick={(e) => handleScrollTo(e, 'subscribe')}
-            className="relative bg-transparent border-2 border-brand-green text-brand-green px-5 py-1.5 font-orbitron font-bold overflow-hidden group cursor-hover text-sm"
+            className="relative bg-brand-orange text-white px-5 py-2 font-heading font-semibold overflow-hidden group cursor-hover text-sm uppercase tracking-wider"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: (categories.length + 1) * 0.1 }}
+            transition={{ delay: 0.2 }}
           >
             <motion.div
-              className="absolute inset-0 bg-brand-green"
+              className="absolute inset-0 bg-brand-blue"
               initial={{ x: '-100%' }}
               whileHover={{ x: 0 }}
               transition={{ duration: 0.3 }}
             />
-            <span className="relative z-10 group-hover:text-dark-bg transition-colors duration-300">
+            <span className="relative z-10">
               Subscribe
             </span>
           </motion.a>

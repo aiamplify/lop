@@ -135,9 +135,9 @@ const ContactForm: React.FC = () => {
                         <div key={step} className="flex items-center flex-1">
                             <div className="flex flex-col items-center flex-1">
                                 <motion.div
-                                    className={`w-10 h-10 rounded-full flex items-center justify-center font-orbitron font-bold text-sm transition-all duration-300 ${
+                                    className={`w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm transition-all duration-300 ${
                                         currentStep >= step
-                                            ? 'bg-brand-green text-dark-bg'
+                                            ? 'bg-brand-orange text-dark-bg'
                                             : 'bg-gray-800 text-gray-500'
                                     }`}
                                     animate={{
@@ -152,15 +152,15 @@ const ContactForm: React.FC = () => {
                                         step
                                     )}
                                 </motion.div>
-                                <span className={`text-xs mt-2 font-orbitron ${
-                                    currentStep >= step ? 'text-brand-green' : 'text-gray-500'
+                                <span className={`text-xs mt-2 font-heading ${
+                                    currentStep >= step ? 'text-brand-orange' : 'text-gray-500'
                                 }`}>
                                     {step === 1 ? 'Contact' : step === 2 ? 'Project' : 'Details'}
                                 </span>
                             </div>
                             {step < 3 && (
                                 <div className={`h-0.5 flex-1 mx-2 transition-all duration-300 ${
-                                    currentStep > step ? 'bg-brand-green' : 'bg-gray-800'
+                                    currentStep > step ? 'bg-brand-orange' : 'bg-gray-800'
                                 }`} />
                             )}
                         </div>
@@ -181,15 +181,15 @@ const ContactForm: React.FC = () => {
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-                            className="w-20 h-20 bg-brand-green rounded-full mx-auto mb-6 flex items-center justify-center"
+                            className="w-20 h-20 bg-brand-orange rounded-full mx-auto mb-6 flex items-center justify-center"
                         >
                             <svg className="w-12 h-12 text-dark-bg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                             </svg>
                         </motion.div>
-                        <h3 className="text-3xl font-orbitron font-bold text-white mb-4">Message Sent!</h3>
+                        <h3 className="text-3xl font-heading font-bold text-white mb-4">Message Sent!</h3>
                         <p className="text-gray-400 text-lg mb-2">
-                            Thanks for reaching out, <span className="text-brand-green font-semibold">{formData.name}</span>!
+                            Thanks for reaching out, <span className="text-brand-orange font-semibold">{formData.name}</span>!
                         </p>
                         <p className="text-gray-500">
                             We'll get back to you within 24 hours.
@@ -209,7 +209,7 @@ const ContactForm: React.FC = () => {
                                 >
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                         <div>
-                                            <label htmlFor="name" className="block text-sm font-orbitron text-gray-400 mb-2">
+                                            <label htmlFor="name" className="block text-sm font-heading text-gray-400 mb-2">
                                                 Full Name <span className="text-red-500">*</span>
                                             </label>
                                             <input
@@ -219,15 +219,15 @@ const ContactForm: React.FC = () => {
                                                 onChange={(e) => handleChange('name', e.target.value)}
                                                 className={`w-full bg-gray-900/50 border-2 ${
                                                     errors.name ? 'border-red-500' : 'border-gray-700/50'
-                                                } focus:border-brand-green outline-none py-3 px-4 text-white transition-all duration-300 placeholder-gray-600`}
+                                                } focus:border-brand-orange outline-none py-3 px-4 text-white transition-all duration-300 placeholder-gray-600`}
                                                 placeholder="John Doe"
                                             />
                                             {errors.name && (
-                                                <p className="text-red-500 text-xs mt-1 font-orbitron">{errors.name}</p>
+                                                <p className="text-red-500 text-xs mt-1 font-heading">{errors.name}</p>
                                             )}
                                         </div>
                                         <div>
-                                            <label htmlFor="email" className="block text-sm font-orbitron text-gray-400 mb-2">
+                                            <label htmlFor="email" className="block text-sm font-heading text-gray-400 mb-2">
                                                 Email Address <span className="text-red-500">*</span>
                                             </label>
                                             <input
@@ -237,17 +237,17 @@ const ContactForm: React.FC = () => {
                                                 onChange={(e) => handleChange('email', e.target.value)}
                                                 className={`w-full bg-gray-900/50 border-2 ${
                                                     errors.email ? 'border-red-500' : 'border-gray-700/50'
-                                                } focus:border-brand-green outline-none py-3 px-4 text-white transition-all duration-300 placeholder-gray-600`}
+                                                } focus:border-brand-orange outline-none py-3 px-4 text-white transition-all duration-300 placeholder-gray-600`}
                                                 placeholder="john@example.com"
                                             />
                                             {errors.email && (
-                                                <p className="text-red-500 text-xs mt-1 font-orbitron">{errors.email}</p>
+                                                <p className="text-red-500 text-xs mt-1 font-heading">{errors.email}</p>
                                             )}
                                         </div>
                                     </div>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                         <div>
-                                            <label htmlFor="phone" className="block text-sm font-orbitron text-gray-400 mb-2">
+                                            <label htmlFor="phone" className="block text-sm font-heading text-gray-400 mb-2">
                                                 Phone Number <span className="text-gray-600 text-xs">(Optional)</span>
                                             </label>
                                             <input
@@ -257,15 +257,15 @@ const ContactForm: React.FC = () => {
                                                 onChange={(e) => handleChange('phone', e.target.value)}
                                                 className={`w-full bg-gray-900/50 border-2 ${
                                                     errors.phone ? 'border-red-500' : 'border-gray-700/50'
-                                                } focus:border-brand-green outline-none py-3 px-4 text-white transition-all duration-300 placeholder-gray-600`}
+                                                } focus:border-brand-orange outline-none py-3 px-4 text-white transition-all duration-300 placeholder-gray-600`}
                                                 placeholder="+1 (555) 000-0000"
                                             />
                                             {errors.phone && (
-                                                <p className="text-red-500 text-xs mt-1 font-orbitron">{errors.phone}</p>
+                                                <p className="text-red-500 text-xs mt-1 font-heading">{errors.phone}</p>
                                             )}
                                         </div>
                                         <div>
-                                            <label htmlFor="company" className="block text-sm font-orbitron text-gray-400 mb-2">
+                                            <label htmlFor="company" className="block text-sm font-heading text-gray-400 mb-2">
                                                 Company <span className="text-gray-600 text-xs">(Optional)</span>
                                             </label>
                                             <input
@@ -273,7 +273,7 @@ const ContactForm: React.FC = () => {
                                                 id="company"
                                                 value={formData.company}
                                                 onChange={(e) => handleChange('company', e.target.value)}
-                                                className="w-full bg-gray-900/50 border-2 border-gray-700/50 focus:border-brand-green outline-none py-3 px-4 text-white transition-all duration-300 placeholder-gray-600"
+                                                className="w-full bg-gray-900/50 border-2 border-gray-700/50 focus:border-brand-orange outline-none py-3 px-4 text-white transition-all duration-300 placeholder-gray-600"
                                                 placeholder="Your Company"
                                             />
                                         </div>
@@ -291,7 +291,7 @@ const ContactForm: React.FC = () => {
                                     className="space-y-5"
                                 >
                                     <div>
-                                        <label className="block text-sm font-orbitron text-gray-400 mb-3">
+                                        <label className="block text-sm font-heading text-gray-400 mb-3">
                                             Project Type <span className="text-red-500">*</span>
                                         </label>
                                         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -300,10 +300,10 @@ const ContactForm: React.FC = () => {
                                                     key={type}
                                                     type="button"
                                                     onClick={() => handleChange('projectType', type)}
-                                                    className={`py-3 px-4 font-orbitron text-sm transition-all duration-300 ${
+                                                    className={`py-3 px-4 font-heading text-sm transition-all duration-300 ${
                                                         formData.projectType === type
-                                                            ? 'bg-brand-green text-dark-bg border-2 border-brand-green'
-                                                            : 'bg-gray-900/50 text-gray-300 border-2 border-gray-700/50 hover:border-brand-green/50'
+                                                            ? 'bg-brand-orange text-dark-bg border-2 border-brand-orange'
+                                                            : 'bg-gray-900/50 text-gray-300 border-2 border-gray-700/50 hover:border-brand-orange/50'
                                                     }`}
                                                     whileHover={{ scale: 1.05 }}
                                                     whileTap={{ scale: 0.95 }}
@@ -313,12 +313,12 @@ const ContactForm: React.FC = () => {
                                             ))}
                                         </div>
                                         {errors.projectType && (
-                                            <p className="text-red-500 text-xs mt-2 font-orbitron">{errors.projectType}</p>
+                                            <p className="text-red-500 text-xs mt-2 font-heading">{errors.projectType}</p>
                                         )}
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-orbitron text-gray-400 mb-3">
+                                        <label className="block text-sm font-heading text-gray-400 mb-3">
                                             Budget Range <span className="text-red-500">*</span>
                                         </label>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -327,10 +327,10 @@ const ContactForm: React.FC = () => {
                                                     key={budget}
                                                     type="button"
                                                     onClick={() => handleChange('budget', budget)}
-                                                    className={`py-3 px-4 font-orbitron text-sm transition-all duration-300 ${
+                                                    className={`py-3 px-4 font-heading text-sm transition-all duration-300 ${
                                                         formData.budget === budget
-                                                            ? 'bg-brand-green text-dark-bg border-2 border-brand-green'
-                                                            : 'bg-gray-900/50 text-gray-300 border-2 border-gray-700/50 hover:border-brand-green/50'
+                                                            ? 'bg-brand-orange text-dark-bg border-2 border-brand-orange'
+                                                            : 'bg-gray-900/50 text-gray-300 border-2 border-gray-700/50 hover:border-brand-orange/50'
                                                     }`}
                                                     whileHover={{ scale: 1.02 }}
                                                     whileTap={{ scale: 0.98 }}
@@ -340,12 +340,12 @@ const ContactForm: React.FC = () => {
                                             ))}
                                         </div>
                                         {errors.budget && (
-                                            <p className="text-red-500 text-xs mt-2 font-orbitron">{errors.budget}</p>
+                                            <p className="text-red-500 text-xs mt-2 font-heading">{errors.budget}</p>
                                         )}
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-orbitron text-gray-400 mb-3">
+                                        <label className="block text-sm font-heading text-gray-400 mb-3">
                                             Timeline <span className="text-red-500">*</span>
                                         </label>
                                         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -354,10 +354,10 @@ const ContactForm: React.FC = () => {
                                                     key={timeline}
                                                     type="button"
                                                     onClick={() => handleChange('timeline', timeline)}
-                                                    className={`py-3 px-4 font-orbitron text-sm transition-all duration-300 ${
+                                                    className={`py-3 px-4 font-heading text-sm transition-all duration-300 ${
                                                         formData.timeline === timeline
-                                                            ? 'bg-brand-green text-dark-bg border-2 border-brand-green'
-                                                            : 'bg-gray-900/50 text-gray-300 border-2 border-gray-700/50 hover:border-brand-green/50'
+                                                            ? 'bg-brand-orange text-dark-bg border-2 border-brand-orange'
+                                                            : 'bg-gray-900/50 text-gray-300 border-2 border-gray-700/50 hover:border-brand-orange/50'
                                                     }`}
                                                     whileHover={{ scale: 1.05 }}
                                                     whileTap={{ scale: 0.95 }}
@@ -367,7 +367,7 @@ const ContactForm: React.FC = () => {
                                             ))}
                                         </div>
                                         {errors.timeline && (
-                                            <p className="text-red-500 text-xs mt-2 font-orbitron">{errors.timeline}</p>
+                                            <p className="text-red-500 text-xs mt-2 font-heading">{errors.timeline}</p>
                                         )}
                                     </div>
                                 </motion.div>
@@ -383,7 +383,7 @@ const ContactForm: React.FC = () => {
                                     className="space-y-5"
                                 >
                                     <div>
-                                        <label htmlFor="message" className="block text-sm font-orbitron text-gray-400 mb-2">
+                                        <label htmlFor="message" className="block text-sm font-heading text-gray-400 mb-2">
                                             Tell us about your project
                                         </label>
                                         <textarea
@@ -391,17 +391,17 @@ const ContactForm: React.FC = () => {
                                             rows={8}
                                             value={formData.message}
                                             onChange={(e) => handleChange('message', e.target.value)}
-                                            className="w-full bg-gray-900/50 border-2 border-gray-700/50 focus:border-brand-green outline-none py-3 px-4 text-white transition-all duration-300 resize-none placeholder-gray-600"
+                                            className="w-full bg-gray-900/50 border-2 border-gray-700/50 focus:border-brand-orange outline-none py-3 px-4 text-white transition-all duration-300 resize-none placeholder-gray-600"
                                             placeholder="What are your goals? Any specific requirements or ideas you'd like to share?"
                                         />
-                                        <p className="text-xs text-gray-500 mt-2 font-orbitron">
+                                        <p className="text-xs text-gray-500 mt-2 font-heading">
                                             {formData.message.length} characters
                                         </p>
                                     </div>
 
                                     {/* Summary */}
                                     <div className="bg-gray-900/30 border border-gray-700/50 p-5 rounded">
-                                        <h4 className="text-lg font-orbitron font-bold text-brand-green mb-3">Quote Summary</h4>
+                                        <h4 className="text-lg font-heading font-bold text-brand-orange mb-3">Quote Summary</h4>
                                         <div className="space-y-2 text-sm">
                                             <div className="flex justify-between">
                                                 <span className="text-gray-500">Contact:</span>
@@ -419,7 +419,7 @@ const ContactForm: React.FC = () => {
                                             )}
                                             <div className="flex justify-between">
                                                 <span className="text-gray-500">Project:</span>
-                                                <span className="text-brand-green font-semibold">{formData.projectType}</span>
+                                                <span className="text-brand-orange font-semibold">{formData.projectType}</span>
                                             </div>
                                             <div className="flex justify-between">
                                                 <span className="text-gray-500">Budget:</span>
@@ -441,7 +441,7 @@ const ContactForm: React.FC = () => {
                                 <motion.button
                                     type="button"
                                     onClick={prevStep}
-                                    className="flex-1 bg-gray-800 text-white px-6 py-4 font-bold font-orbitron hover:bg-gray-700 transition-all duration-300 flex items-center justify-center gap-2"
+                                    className="flex-1 bg-gray-800 text-white px-6 py-4 font-bold font-heading hover:bg-gray-700 transition-all duration-300 flex items-center justify-center gap-2"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
@@ -455,7 +455,7 @@ const ContactForm: React.FC = () => {
                                 <motion.button
                                     type="button"
                                     onClick={nextStep}
-                                    className="flex-1 bg-brand-green text-dark-bg px-6 py-4 font-bold font-orbitron hover:bg-green-400 transition-all duration-300 flex items-center justify-center gap-2"
+                                    className="flex-1 bg-brand-orange text-dark-bg px-6 py-4 font-bold font-heading hover:bg-green-400 transition-all duration-300 flex items-center justify-center gap-2"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
@@ -468,7 +468,7 @@ const ContactForm: React.FC = () => {
                                 <motion.button
                                     type="submit"
                                     disabled={status === 'sending'}
-                                    className="flex-1 bg-brand-green text-dark-bg px-6 py-4 font-bold font-orbitron hover:bg-green-400 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                    className="flex-1 bg-brand-orange text-dark-bg px-6 py-4 font-bold font-heading hover:bg-green-400 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                     whileHover={status !== 'sending' ? { scale: 1.02 } : {}}
                                     whileTap={status !== 'sending' ? { scale: 0.98 } : {}}
                                 >

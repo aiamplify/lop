@@ -54,8 +54,8 @@ const Blog: React.FC<BlogProps> = ({ filterCategory }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-orbitron font-bold text-white mb-6 flex items-center gap-3">
-              <span className="text-brand-green">✦</span>
+            <h2 className="text-3xl font-heading font-bold text-white mb-6 flex items-center gap-3">
+              <span className="text-brand-orange">✦</span>
               Featured Article
             </h2>
             <motion.a
@@ -75,13 +75,13 @@ const Blog: React.FC<BlogProps> = ({ filterCategory }) => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-brand-green text-dark-bg text-xs font-bold uppercase tracking-wider">
+                    <span className="px-3 py-1 bg-brand-orange text-dark-bg text-xs font-bold uppercase tracking-wider">
                       {featuredPost.category}
                     </span>
                   </div>
                 </div>
                 <div className="p-8 md:p-12 flex flex-col justify-center">
-                  <h3 className="text-3xl md:text-4xl font-orbitron font-bold text-white mb-4 group-hover:text-brand-green transition-colors duration-300">
+                  <h3 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4 group-hover:text-brand-orange transition-colors duration-300">
                     {featuredPost.title}
                   </h3>
                   <p className="text-gray-400 mb-6 text-lg leading-relaxed">
@@ -115,15 +115,15 @@ const Blog: React.FC<BlogProps> = ({ filterCategory }) => {
             variants={fadeIn('down', 0)}
             className="flex items-center justify-between mb-8"
           >
-            <h2 className="text-4xl font-orbitron font-bold text-white flex items-center gap-3">
+            <h2 className="text-4xl font-heading font-bold text-white flex items-center gap-3">
               {filterCategory ? (
                 <>
-                  <span className="text-brand-green">✦</span>
+                  <span className="text-brand-orange">✦</span>
                   {filterCategory}
                 </>
               ) : (
                 <>
-                  <span className="text-brand-green">✦</span>
+                  <span className="text-brand-orange">✦</span>
                   Latest Articles
                 </>
               )}
@@ -141,7 +141,7 @@ const Blog: React.FC<BlogProps> = ({ filterCategory }) => {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-6 py-3 bg-gray-900/50 border border-gray-700/50 text-white placeholder-gray-500 focus:border-brand-green focus:outline-none transition-colors"
+                className="w-full px-6 py-3 bg-gray-900/50 border border-gray-700/50 text-white placeholder-gray-500 focus:border-brand-orange focus:outline-none transition-colors"
               />
               <svg className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -167,8 +167,8 @@ const Blog: React.FC<BlogProps> = ({ filterCategory }) => {
                 }}
                 className={`px-4 py-2 font-medium transition-all duration-300 transform hover:scale-105 text-sm ${
                   selectedCategory === category
-                    ? 'bg-brand-green text-dark-bg shadow-lg shadow-brand-green/20'
-                    : 'bg-gray-900/50 text-gray-300 border border-gray-700/50 hover:border-brand-green/50'
+                    ? 'bg-brand-orange text-dark-bg shadow-lg shadow-brand-orange/20'
+                    : 'bg-gray-900/50 text-gray-300 border border-gray-700/50 hover:border-brand-orange/50'
                 }`}
               >
                 {category}
@@ -210,7 +210,7 @@ const Blog: React.FC<BlogProps> = ({ filterCategory }) => {
             transition={{ delay: 0.3 }}
           >
             <div className="text-6xl mb-6">🔍</div>
-            <h3 className="text-3xl font-orbitron text-white mb-4">No articles found</h3>
+            <h3 className="text-3xl font-heading text-white mb-4">No articles found</h3>
             <p className="text-gray-400 mb-8">
               Try adjusting your search or category filters
             </p>
@@ -220,7 +220,7 @@ const Blog: React.FC<BlogProps> = ({ filterCategory }) => {
                 setSelectedCategory('All');
                 window.location.hash = '';
               }}
-              className="px-8 py-4 bg-brand-green text-dark-bg font-orbitron font-bold hover:bg-green-400 transition-colors"
+              className="px-8 py-4 bg-brand-orange text-dark-bg font-heading font-bold hover:bg-brand-yellow transition-colors"
             >
               Reset Filters
             </button>

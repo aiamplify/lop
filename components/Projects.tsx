@@ -28,10 +28,10 @@ const Projects: React.FC = () => {
           className="text-center mb-16"
         >
           <motion.div variants={textVariant(0)}>
-            <h2 className="text-5xl md:text-6xl font-orbitron font-bold text-white mb-6 relative inline-block bg-gradient-to-r from-white via-brand-green to-white bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6 relative inline-block bg-gradient-to-r from-white via-brand-orange to-white bg-clip-text text-transparent">
               Featured Work
               <motion.div
-                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-green to-transparent"
+                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-orange to-transparent"
                 initial={{ scaleX: 0 }}
                 animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
             variants={fadeIn('up', 0.2)}
             className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8"
           >
-            Real results for real businesses. From <span className="text-brand-green font-semibold">branding to web design</span>, we help small businesses stand out.
+            Real results for real businesses. From <span className="text-brand-orange font-semibold">branding to web design</span>, we help small businesses stand out.
           </motion.p>
 
           <motion.div
@@ -51,15 +51,15 @@ const Projects: React.FC = () => {
             className="flex justify-center gap-6"
           >
             <div className="text-center">
-              <div className="text-4xl font-orbitron font-bold text-brand-green">{projectsData.length}+</div>
+              <div className="text-4xl font-heading font-bold text-brand-orange">{projectsData.length}+</div>
               <div className="text-sm text-gray-500 uppercase tracking-wider">Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-orbitron font-bold text-brand-green">{new Set(projectsData.map(p => p.client)).size}+</div>
+              <div className="text-4xl font-heading font-bold text-brand-orange">{new Set(projectsData.map(p => p.client)).size}+</div>
               <div className="text-sm text-gray-500 uppercase tracking-wider">Clients</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-orbitron font-bold text-brand-green">100%</div>
+              <div className="text-4xl font-heading font-bold text-brand-orange">100%</div>
               <div className="text-sm text-gray-500 uppercase tracking-wider">Satisfaction</div>
             </div>
           </motion.div>
@@ -85,7 +85,7 @@ const Projects: React.FC = () => {
         >
           <a
             href="#/projects"
-            className="inline-block px-10 py-5 bg-brand-green text-dark-bg font-orbitron font-bold text-lg hover:bg-green-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-brand-green/50"
+            className="inline-block px-10 py-5 bg-brand-orange text-dark-bg font-heading font-bold text-lg hover:bg-green-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-brand-orange/50"
           >
             View All Projects →
           </a>
@@ -94,7 +94,7 @@ const Projects: React.FC = () => {
 
       {/* Decorative elements */}
       <motion.div
-        className="absolute top-20 right-10 w-64 h-64 bg-brand-green/5 rounded-full blur-3xl"
+        className="absolute top-20 right-10 w-64 h-64 bg-brand-orange/5 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],

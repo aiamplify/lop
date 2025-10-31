@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay = 0, viewMode 
           href={`#/projects/${project.id}`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="block relative bg-gradient-to-br from-gray-900/80 to-gray-800/50 border-2 border-gray-700/50 group overflow-hidden hover:border-brand-green/50 transition-all duration-300"
+          className="block relative bg-gradient-to-br from-gray-900/80 to-gray-800/50 border-2 border-gray-700/50 group overflow-hidden hover:border-brand-orange/50 transition-all duration-300"
         >
           <div className="flex flex-col md:flex-row gap-6 p-6">
             {/* Image */}
@@ -44,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay = 0, viewMode 
                 transition={{ duration: 0.6, ease: 'easeOut' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-              <span className="absolute top-3 left-3 bg-brand-green text-dark-bg text-xs font-bold font-orbitron uppercase px-3 py-1">
+              <span className="absolute top-3 left-3 bg-brand-orange text-dark-bg text-xs font-bold font-heading uppercase px-3 py-1">
                 {project.category}
               </span>
             </div>
@@ -52,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay = 0, viewMode 
             {/* Content */}
             <div className="flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="text-3xl font-bold text-white mb-3 font-orbitron group-hover:text-brand-green transition-colors duration-300">
+                <h3 className="text-3xl font-bold text-white mb-3 font-heading group-hover:text-brand-orange transition-colors duration-300">
                   {project.title}
                 </h3>
                 <p className="text-gray-400 leading-relaxed mb-4 text-lg">{project.description}</p>
@@ -83,7 +83,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay = 0, viewMode 
                     {project.technologies.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs bg-gray-800/50 text-brand-green border border-brand-green/30 px-2 py-1 font-orbitron"
+                        className="text-xs bg-gray-800/50 text-brand-orange border border-brand-orange/30 px-2 py-1 font-heading"
                       >
                         {tech}
                       </span>
@@ -94,7 +94,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay = 0, viewMode 
 
               {/* View Project Arrow */}
               <motion.div
-                className="flex items-center gap-2 text-brand-green font-orbitron font-bold text-sm mt-4"
+                className="flex items-center gap-2 text-brand-orange font-heading font-bold text-sm mt-4"
                 animate={{ x: isHovered ? 10 : 0 }}
                 transition={{ duration: 0.3 }}
               >
@@ -132,14 +132,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay = 0, viewMode 
       >
         <a
           href={`#/projects/${project.id}`}
-          className="block relative bg-gradient-to-br from-gray-900/80 via-gray-900/50 to-gray-900/80 border-2 border-gray-700/30 group overflow-hidden backdrop-blur-sm hover:border-brand-green/50 transition-all duration-500"
+          className="block relative bg-gradient-to-br from-gray-900/80 via-gray-900/50 to-gray-900/80 border-2 border-gray-700/30 group overflow-hidden backdrop-blur-sm hover:border-brand-orange/50 transition-all duration-500"
           style={{
             background: 'linear-gradient(135deg, rgba(17, 17, 17, 0.8) 0%, rgba(17, 17, 17, 0.5) 50%, rgba(17, 17, 17, 0.8) 100%)',
           }}
         >
           {/* Animated gradient overlay */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 via-transparent to-brand-green/5" />
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/5 via-transparent to-brand-orange/5" />
           </div>
 
           <div className="relative overflow-hidden">
@@ -161,27 +161,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay = 0, viewMode 
             />
 
             {/* Category Badge */}
-            <span className="absolute top-4 left-4 bg-brand-green text-dark-bg text-xs font-bold font-orbitron uppercase px-3 py-1.5 shadow-lg">
+            <span className="absolute top-4 left-4 bg-brand-orange text-dark-bg text-xs font-bold font-heading uppercase px-3 py-1.5 shadow-lg">
               {project.category}
             </span>
           </div>
 
           <div className="relative p-6">
-            <h3 className="text-2xl font-bold text-white mb-3 font-orbitron group-hover:text-brand-green transition-colors duration-300 line-clamp-2">
+            <h3 className="text-2xl font-bold text-white mb-3 font-heading group-hover:text-brand-orange transition-colors duration-300 line-clamp-2">
               {project.title}
             </h3>
             <p className="text-gray-400 leading-relaxed line-clamp-2 mb-4">{project.description}</p>
 
             {/* Client Info */}
             {project.client && (
-              <p className="text-sm text-gray-500 font-orbitron mb-2">
-                Client: <span className="text-brand-green">{project.client}</span>
+              <p className="text-sm text-gray-500 font-heading mb-2">
+                Client: <span className="text-brand-orange">{project.client}</span>
               </p>
             )}
 
             {/* Animated bottom border */}
             <motion.div
-              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-brand-green to-green-400"
+              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-brand-orange to-green-400"
               initial={{ width: 0 }}
               whileHover={{ width: '100%' }}
               transition={{ duration: 0.4 }}

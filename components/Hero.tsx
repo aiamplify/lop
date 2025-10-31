@@ -18,12 +18,11 @@ const Hero: React.FC = () => {
   };
 
   const categories = [
-    { name: 'Design Trends', count: 1, icon: '🎨' },
-    { name: 'Tutorial', count: 2, icon: '📚' },
-    { name: 'Opinion', count: 1, icon: '💭' },
-    { name: 'Branding', count: 1, icon: '🎯' },
-    { name: 'Design Tips', count: 1, icon: '✨' },
-    { name: 'Best Practices', count: 1, icon: '⚡' },
+    { name: 'Automation', count: 2, icon: '⚙️' },
+    { name: 'AI Tools', count: 3, icon: '🤖' },
+    { name: 'Business Growth', count: 1, icon: '📈' },
+    { name: 'Efficiency', count: 2, icon: '⚡' },
+    { name: 'Best Practices', count: 1, icon: '✅' },
   ];
 
   return (
@@ -37,18 +36,18 @@ const Hero: React.FC = () => {
         {/* Main Heading */}
         <motion.div variants={textVariant(0)}>
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-orbitron font-bold text-white mb-6 leading-tight"
+            className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white mb-6 leading-tight"
             onMouseMove={handleMouseMove}
             onMouseLeave={() => setMousePosition({ x: 0, y: 0 })}
           >
-            Quantum{' '}
+            AI for{' '}
             <motion.span
-              className="text-brand-green inline-block relative"
+              className="text-brand-orange inline-block relative"
               animate={{
                 textShadow: [
-                  '0 0 20px rgba(0, 255, 153, 0.5)',
-                  '0 0 40px rgba(0, 255, 153, 0.8)',
-                  '0 0 20px rgba(0, 255, 153, 0.5)',
+                  '0 0 20px rgba(255, 107, 53, 0.3)',
+                  '0 0 30px rgba(255, 107, 53, 0.5)',
+                  '0 0 20px rgba(255, 107, 53, 0.3)',
                 ],
               }}
               transition={{
@@ -61,7 +60,7 @@ const Hero: React.FC = () => {
                 rotateY: mousePosition.x * 0.3,
               }}
             >
-              Insights
+              Contractors
             </motion.span>
           </motion.h1>
         </motion.div>
@@ -70,9 +69,9 @@ const Hero: React.FC = () => {
           variants={fadeIn('up', 0.2)}
           className="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Exploring the intersection of design, technology, and creative thinking.
+          Streamline your operations, boost efficiency, and grow your business with AI automation.
           <br />
-          <span className="text-brand-green/80">Where ideas become reality.</span>
+          <span className="text-brand-orange font-semibold">Built specifically for the construction industry.</span>
         </motion.p>
 
         {/* Tagline */}
@@ -81,16 +80,16 @@ const Hero: React.FC = () => {
           className="flex flex-wrap justify-center gap-3 mb-12"
         >
           <span className="px-4 py-2 bg-gray-800/50 border border-gray-700/50 text-gray-300 text-sm font-medium backdrop-blur-sm">
-            Design
+            Save Time
           </span>
           <span className="px-4 py-2 bg-gray-800/50 border border-gray-700/50 text-gray-300 text-sm font-medium backdrop-blur-sm">
-            Technology
+            Increase Profits
           </span>
           <span className="px-4 py-2 bg-gray-800/50 border border-gray-700/50 text-gray-300 text-sm font-medium backdrop-blur-sm">
-            Creativity
+            Scale Faster
           </span>
           <span className="px-4 py-2 bg-gray-800/50 border border-gray-700/50 text-gray-300 text-sm font-medium backdrop-blur-sm">
-            Innovation
+            Win More Bids
           </span>
         </motion.div>
 
@@ -112,18 +111,18 @@ const Hero: React.FC = () => {
             >
               {/* Hover effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-brand-green/0 to-brand-green/0 group-hover:from-brand-green/10 group-hover:to-brand-green/5 transition-all duration-300"
+                className="absolute inset-0 bg-gradient-to-br from-brand-orange/0 to-brand-orange/0 group-hover:from-brand-orange/10 group-hover:to-brand-orange/5 transition-all duration-300"
               />
 
-              {/* Glowing border on hover */}
+              {/* Border on hover */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute inset-0 border border-brand-green/30" />
+                <div className="absolute inset-0 border border-brand-orange/30" />
               </div>
 
-              <span className="relative flex items-center gap-2 text-gray-300 group-hover:text-brand-green transition-colors duration-300">
+              <span className="relative flex items-center gap-2 text-gray-300 group-hover:text-brand-orange transition-colors duration-300">
                 <span className="text-lg">{category.icon}</span>
                 <span className="font-medium">{category.name}</span>
-                <span className="text-xs bg-brand-green/10 text-brand-green px-2 py-0.5 rounded-full">
+                <span className="text-xs bg-brand-orange/10 text-brand-orange px-2 py-0.5 rounded-full">
                   {category.count}
                 </span>
               </span>
@@ -149,7 +148,7 @@ const Hero: React.FC = () => {
             }}
           >
             <motion.div
-              className="w-1.5 h-2 bg-brand-green rounded-full"
+              className="w-1.5 h-2 bg-brand-orange rounded-full"
               animate={{
                 y: [0, 12, 0],
               }}

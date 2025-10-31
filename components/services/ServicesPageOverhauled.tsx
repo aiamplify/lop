@@ -67,11 +67,11 @@ const ServicesPageOverhauled: React.FC = () => {
             {/* Main Title */}
             <motion.h1
               variants={textVariant(0)}
-              className="text-5xl md:text-7xl font-orbitron font-bold text-white mb-6 leading-tight"
+              className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight"
             >
               World-Class{' '}
               <motion.span
-                className="text-brand-green inline-block"
+                className="text-brand-orange inline-block"
                 animate={{
                   textShadow: [
                     '0 0 20px rgba(0, 255, 153, 0.5)',
@@ -116,7 +116,7 @@ const ServicesPageOverhauled: React.FC = () => {
                   className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 border border-gray-700/30 backdrop-blur-sm px-8 py-4 rounded-lg cursor-hover"
                   whileHover={{ scale: 1.05, borderColor: 'rgba(0, 255, 153, 0.5)' }}
                 >
-                  <div className="text-3xl font-orbitron font-bold text-brand-green mb-1">
+                  <div className="text-3xl font-heading font-bold text-brand-orange mb-1">
                     {stat.number}
                   </div>
                   <div className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</div>
@@ -134,7 +134,7 @@ const ServicesPageOverhauled: React.FC = () => {
                   const element = document.getElementById('service-categories');
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="relative bg-brand-green text-dark-bg px-10 py-4 font-bold font-orbitron text-lg overflow-hidden group cursor-hover"
+                className="relative bg-brand-orange text-dark-bg px-10 py-4 font-bold font-heading text-lg overflow-hidden group cursor-hover"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -150,12 +150,12 @@ const ServicesPageOverhauled: React.FC = () => {
 
               <motion.a
                 href="#contact"
-                className="relative bg-transparent border-2 border-brand-green text-brand-green px-10 py-4 font-bold font-orbitron text-lg overflow-hidden group cursor-hover"
+                className="relative bg-transparent border-2 border-brand-orange text-brand-orange px-10 py-4 font-bold font-heading text-lg overflow-hidden group cursor-hover"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.div
-                  className="absolute inset-0 bg-brand-green"
+                  className="absolute inset-0 bg-brand-orange"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
@@ -170,7 +170,7 @@ const ServicesPageOverhauled: React.FC = () => {
 
         {/* Decorative Elements */}
         <motion.div
-          className="absolute top-20 right-20 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl"
+          className="absolute top-20 right-20 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -193,7 +193,7 @@ const ServicesPageOverhauled: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
               Our Services
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
@@ -224,12 +224,12 @@ const ServicesPageOverhauled: React.FC = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="text-5xl mb-4">{category.icon}</div>
-                  <h3 className="text-xl font-orbitron font-bold text-white mb-2 group-hover:text-brand-green transition-colors">
+                  <h3 className="text-xl font-heading font-bold text-white mb-2 group-hover:text-brand-orange transition-colors">
                     {category.name}
                   </h3>
                   <p className="text-gray-400 text-sm mb-4">{category.tagline}</p>
                   {category.startingPrice && (
-                    <div className="text-brand-green font-orbitron font-bold">
+                    <div className="text-brand-orange font-heading font-bold">
                       From {category.startingPrice}
                     </div>
                   )}
@@ -237,7 +237,7 @@ const ServicesPageOverhauled: React.FC = () => {
 
                 {/* Corner Accent */}
                 <motion.div
-                  className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-brand-green/0 group-hover:border-brand-green/50 transition-all duration-300"
+                  className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-brand-orange/0 group-hover:border-brand-orange/50 transition-all duration-300"
                   style={{ borderRadius: '0 0.5rem 0 0' }}
                 />
               </motion.button>
@@ -255,7 +255,7 @@ const ServicesPageOverhauled: React.FC = () => {
 
       {/* Final CTA Section */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 via-transparent to-brand-green/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/5 via-transparent to-brand-orange/5" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -264,7 +264,7 @@ const ServicesPageOverhauled: React.FC = () => {
             viewport={{ once: true }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
               Ready to Start Your Project?
             </h2>
             <p className="text-xl text-gray-400 mb-10">
@@ -274,7 +274,7 @@ const ServicesPageOverhauled: React.FC = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <motion.a
                 href="#contact"
-                className="relative bg-brand-green text-dark-bg px-12 py-4 font-bold font-orbitron text-lg overflow-hidden group cursor-hover"
+                className="relative bg-brand-orange text-dark-bg px-12 py-4 font-bold font-heading text-lg overflow-hidden group cursor-hover"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -290,12 +290,12 @@ const ServicesPageOverhauled: React.FC = () => {
 
               <motion.a
                 href="#/projects"
-                className="relative bg-transparent border-2 border-brand-green text-brand-green px-12 py-4 font-bold font-orbitron text-lg overflow-hidden group cursor-hover"
+                className="relative bg-transparent border-2 border-brand-orange text-brand-orange px-12 py-4 font-bold font-heading text-lg overflow-hidden group cursor-hover"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.div
-                  className="absolute inset-0 bg-brand-green"
+                  className="absolute inset-0 bg-brand-orange"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}

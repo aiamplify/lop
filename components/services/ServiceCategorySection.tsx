@@ -57,7 +57,7 @@ const ServiceCategorySection: React.FC<ServiceCategorySectionProps> = ({ categor
           {/* Title */}
           <motion.h2
             variants={fadeIn('up', 0.1)}
-            className="text-5xl md:text-6xl font-orbitron font-bold text-white mb-4"
+            className="text-5xl md:text-6xl font-heading font-bold text-white mb-4"
           >
             {category.name}
           </motion.h2>
@@ -65,7 +65,7 @@ const ServiceCategorySection: React.FC<ServiceCategorySectionProps> = ({ categor
           {/* Tagline */}
           <motion.p
             variants={fadeIn('up', 0.2)}
-            className="text-2xl font-orbitron mb-6"
+            className="text-2xl font-heading mb-6"
             style={{ color: category.color }}
           >
             {category.tagline}
@@ -87,13 +87,13 @@ const ServiceCategorySection: React.FC<ServiceCategorySectionProps> = ({ categor
             {category.startingPrice && (
               <div className="bg-gray-900/50 border border-gray-700/30 px-6 py-3 rounded-full backdrop-blur-sm">
                 <span className="text-gray-400">Starting at </span>
-                <span className="text-brand-green font-bold font-orbitron">{category.startingPrice}</span>
+                <span className="text-brand-orange font-bold font-heading">{category.startingPrice}</span>
               </div>
             )}
             {category.typicalTimeline && (
               <div className="bg-gray-900/50 border border-gray-700/30 px-6 py-3 rounded-full backdrop-blur-sm">
                 <span className="text-gray-400">Timeline: </span>
-                <span className="text-white font-orbitron">{category.typicalTimeline}</span>
+                <span className="text-white font-heading">{category.typicalTimeline}</span>
               </div>
             )}
           </motion.div>
@@ -106,7 +106,7 @@ const ServiceCategorySection: React.FC<ServiceCategorySectionProps> = ({ categor
           animate={inView ? 'show' : 'hidden'}
           className="relative mb-16 group cursor-hover"
         >
-          <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-brand-green/50 to-transparent blur opacity-0 group-hover:opacity-100 transition duration-500" />
+          <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-brand-orange/50 to-transparent blur opacity-0 group-hover:opacity-100 transition duration-500" />
           <motion.img
             src={category.heroImage}
             alt={category.name}
@@ -131,7 +131,7 @@ const ServiceCategorySection: React.FC<ServiceCategorySectionProps> = ({ categor
               className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 border border-gray-700/30 px-4 py-3 rounded-lg text-center backdrop-blur-sm group cursor-hover"
               whileHover={{ scale: 1.05, borderColor: `${category.color}50` }}
             >
-              <span className="text-gray-300 group-hover:text-brand-green transition-colors font-medium">
+              <span className="text-gray-300 group-hover:text-brand-orange transition-colors font-medium">
                 {feature}
               </span>
             </motion.div>
@@ -144,7 +144,7 @@ const ServiceCategorySection: React.FC<ServiceCategorySectionProps> = ({ categor
             variants={fadeIn('up', 0.7)}
             initial="hidden"
             animate={inView ? 'show' : 'hidden'}
-            className="text-3xl font-orbitron font-bold text-white mb-8 text-center"
+            className="text-3xl font-heading font-bold text-white mb-8 text-center"
           >
             What's Included
           </motion.h3>
@@ -167,13 +167,13 @@ const ServiceCategorySection: React.FC<ServiceCategorySectionProps> = ({ categor
                   className="w-full px-6 py-4 flex items-center justify-between text-left group cursor-hover"
                   whileHover={{ backgroundColor: 'rgba(0, 255, 153, 0.05)' }}
                 >
-                  <span className="text-xl font-orbitron font-bold text-white group-hover:text-brand-green transition-colors">
+                  <span className="text-xl font-heading font-bold text-white group-hover:text-brand-orange transition-colors">
                     {subcategory.name}
                   </span>
                   <motion.div
                     animate={{ rotate: expandedSubcategory === idx ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className="text-brand-green"
+                    className="text-brand-orange"
                   >
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -201,7 +201,7 @@ const ServiceCategorySection: React.FC<ServiceCategorySectionProps> = ({ categor
                             className="bg-gray-800/50 p-4 rounded border border-gray-700/20 group cursor-hover"
                             whileHover={{ scale: 1.02, borderColor: `${category.color}30` }}
                           >
-                            <h5 className="font-orbitron font-bold text-brand-green mb-1 group-hover:text-white transition-colors">
+                            <h5 className="font-heading font-bold text-brand-orange mb-1 group-hover:text-white transition-colors">
                               {deliverable.name}
                             </h5>
                             <p className="text-gray-400 text-sm mb-2">{deliverable.description}</p>
@@ -234,7 +234,7 @@ const ServiceCategorySection: React.FC<ServiceCategorySectionProps> = ({ categor
             variants={fadeIn('up', 0.9)}
             initial="hidden"
             animate={inView ? 'show' : 'hidden'}
-            className="text-3xl font-orbitron font-bold text-white mb-8 text-center"
+            className="text-3xl font-heading font-bold text-white mb-8 text-center"
           >
             Our Process
           </motion.h3>
@@ -250,7 +250,7 @@ const ServiceCategorySection: React.FC<ServiceCategorySectionProps> = ({ categor
         >
           <motion.a
             href="#contact"
-            className="inline-block relative bg-brand-green text-dark-bg px-12 py-4 font-bold font-orbitron text-lg overflow-hidden group cursor-hover"
+            className="inline-block relative bg-brand-orange text-dark-bg px-12 py-4 font-bold font-heading text-lg overflow-hidden group cursor-hover"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

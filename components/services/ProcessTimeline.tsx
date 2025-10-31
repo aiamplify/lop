@@ -43,7 +43,7 @@ const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps, color = '#00ff
                 transition={{ duration: 0.3 }}
               >
                 {/* Step Number */}
-                <div className="absolute -top-3 -left-3 w-10 h-10 bg-gradient-to-br from-brand-green to-green-400 rounded-full flex items-center justify-center font-orbitron font-bold text-dark-bg shadow-lg">
+                <div className="absolute -top-3 -left-3 w-10 h-10 bg-gradient-to-br from-brand-orange to-green-400 rounded-full flex items-center justify-center font-heading font-bold text-dark-bg shadow-lg">
                   {step.step}
                 </div>
 
@@ -51,7 +51,7 @@ const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps, color = '#00ff
                 <div className="text-4xl mb-3">{step.icon}</div>
 
                 {/* Title */}
-                <h4 className="text-2xl font-orbitron font-bold text-white mb-2 group-hover:text-brand-green transition-colors">
+                <h4 className="text-2xl font-heading font-bold text-white mb-2 group-hover:text-brand-orange transition-colors">
                   {step.title}
                 </h4>
 
@@ -70,7 +70,7 @@ const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps, color = '#00ff
 
             {/* Center Dot */}
             <motion.div
-              className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-brand-green shadow-lg z-10"
+              className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-brand-orange shadow-lg z-10"
               initial={{ scale: 0 }}
               animate={inView ? { scale: 1 } : { scale: 0 }}
               transition={{ delay: index * 0.2 + 0.3, type: 'spring' }}

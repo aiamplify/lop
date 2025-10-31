@@ -53,7 +53,7 @@ const ProjectsPage: React.FC = () => {
           <a
             href="#"
             onClick={(e) => handleHashNav(e, '')}
-            className="bg-transparent border-2 border-brand-green text-brand-green px-6 py-3 hover:bg-brand-green hover:text-dark-bg transition-all duration-300 font-orbitron font-bold inline-flex items-center gap-2"
+            className="bg-transparent border-2 border-brand-orange text-brand-orange px-6 py-3 hover:bg-brand-orange hover:text-dark-bg transition-all duration-300 font-heading font-bold inline-flex items-center gap-2"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -71,7 +71,7 @@ const ProjectsPage: React.FC = () => {
         >
           <motion.h1
             variants={fadeIn('down', 0)}
-            className="text-5xl md:text-7xl font-orbitron font-bold text-white mb-6 bg-gradient-to-r from-white via-brand-green to-white bg-clip-text text-transparent"
+            className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 bg-gradient-to-r from-white via-brand-orange to-white bg-clip-text text-transparent"
           >
             Our Portfolio
           </motion.h1>
@@ -79,7 +79,7 @@ const ProjectsPage: React.FC = () => {
             variants={fadeIn('up', 0.2)}
             className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8"
           >
-            Real results for real businesses. Explore our work across <span className="text-brand-green font-semibold">branding, design, and digital experiences</span>.
+            Real results for real businesses. Explore our work across <span className="text-brand-orange font-semibold">branding, design, and digital experiences</span>.
           </motion.p>
 
           {/* Stats */}
@@ -90,10 +90,10 @@ const ProjectsPage: React.FC = () => {
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
-                className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-gray-700/50 p-6 text-center hover:border-brand-green/50 transition-all duration-300"
+                className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-gray-700/50 p-6 text-center hover:border-brand-orange/50 transition-all duration-300"
               >
                 <div className="text-4xl mb-2">{stat.icon}</div>
-                <div className="text-3xl font-orbitron font-bold text-brand-green mb-1">{stat.value}</div>
+                <div className="text-3xl font-heading font-bold text-brand-orange mb-1">{stat.value}</div>
                 <div className="text-sm text-gray-500 uppercase tracking-wider">{stat.label}</div>
               </div>
             ))}
@@ -115,7 +115,7 @@ const ProjectsPage: React.FC = () => {
                 placeholder="Search projects..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-6 py-4 bg-gray-900/50 border-2 border-gray-700/50 text-white placeholder-gray-500 focus:border-brand-green focus:outline-none transition-colors font-orbitron"
+                className="w-full px-6 py-4 bg-gray-900/50 border-2 border-gray-700/50 text-white placeholder-gray-500 focus:border-brand-orange focus:outline-none transition-colors font-heading"
               />
               <svg className="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -130,10 +130,10 @@ const ProjectsPage: React.FC = () => {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 font-orbitron font-bold transition-all duration-300 transform hover:scale-105 ${
+                  className={`px-6 py-3 font-heading font-bold transition-all duration-300 transform hover:scale-105 ${
                     selectedCategory === category
-                      ? 'bg-brand-green text-dark-bg shadow-lg shadow-brand-green/30'
-                      : 'bg-gray-900/50 text-gray-300 border border-gray-700/50 hover:border-brand-green/50'
+                      ? 'bg-brand-orange text-dark-bg shadow-lg shadow-brand-orange/30'
+                      : 'bg-gray-900/50 text-gray-300 border border-gray-700/50 hover:border-brand-orange/50'
                   }`}
                 >
                   {category}
@@ -145,8 +145,8 @@ const ProjectsPage: React.FC = () => {
             <div className="flex gap-2 bg-gray-900/50 border border-gray-700/50 p-1">
               <button
                 onClick={() => setViewMode('grid')}
-                className={`px-4 py-2 font-orbitron font-bold transition-all duration-300 ${
-                  viewMode === 'grid' ? 'bg-brand-green text-dark-bg' : 'text-gray-400 hover:text-white'
+                className={`px-4 py-2 font-heading font-bold transition-all duration-300 ${
+                  viewMode === 'grid' ? 'bg-brand-orange text-dark-bg' : 'text-gray-400 hover:text-white'
                 }`}
                 aria-label="Grid view"
               >
@@ -156,8 +156,8 @@ const ProjectsPage: React.FC = () => {
               </button>
               <button
                 onClick={() => setViewMode('list')}
-                className={`px-4 py-2 font-orbitron font-bold transition-all duration-300 ${
-                  viewMode === 'list' ? 'bg-brand-green text-dark-bg' : 'text-gray-400 hover:text-white'
+                className={`px-4 py-2 font-heading font-bold transition-all duration-300 ${
+                  viewMode === 'list' ? 'bg-brand-orange text-dark-bg' : 'text-gray-400 hover:text-white'
                 }`}
                 aria-label="List view"
               >
@@ -176,7 +176,7 @@ const ProjectsPage: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
         >
-          <p className="text-gray-400 font-orbitron">
+          <p className="text-gray-400 font-heading">
             {filteredProjects.length} {filteredProjects.length === 1 ? 'project' : 'projects'} found
             {searchQuery && ` for "${searchQuery}"`}
           </p>
@@ -205,7 +205,7 @@ const ProjectsPage: React.FC = () => {
             transition={{ delay: 0.3 }}
           >
             <div className="text-6xl mb-6">🔍</div>
-            <h3 className="text-3xl font-orbitron text-white mb-4">No projects found</h3>
+            <h3 className="text-3xl font-heading text-white mb-4">No projects found</h3>
             <p className="text-gray-400 mb-8">
               Try adjusting your search or category filters
             </p>
@@ -214,7 +214,7 @@ const ProjectsPage: React.FC = () => {
                 setSearchQuery('');
                 setSelectedCategory('All');
               }}
-              className="px-8 py-4 bg-brand-green text-dark-bg font-orbitron font-bold hover:bg-green-400 transition-colors"
+              className="px-8 py-4 bg-brand-orange text-dark-bg font-heading font-bold hover:bg-green-400 transition-colors"
             >
               Reset Filters
             </button>
@@ -231,13 +231,13 @@ const ProjectsPage: React.FC = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-green-400/10 animate-pulse"></div>
           <div className="relative z-10">
-            <h3 className="text-4xl md:text-5xl font-orbitron text-white mb-6">Ready for Your Own Success Story?</h3>
+            <h3 className="text-4xl md:text-5xl font-heading text-white mb-6">Ready for Your Own Success Story?</h3>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
               Let's create something extraordinary together. Your project could be our next showcase.
             </p>
             <a
               href="#contact"
-              className="inline-block px-10 py-5 bg-brand-green text-dark-bg font-orbitron font-bold text-lg hover:bg-green-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-brand-green/50"
+              className="inline-block px-10 py-5 bg-brand-orange text-dark-bg font-heading font-bold text-lg hover:bg-green-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-brand-orange/50"
             >
               Start Your Project →
             </a>

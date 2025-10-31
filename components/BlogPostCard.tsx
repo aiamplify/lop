@@ -40,10 +40,10 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, delay = 0 }) => {
       transition={{ duration: 0.3, ease: 'easeOut' }}
     >
       {/* Hover Glow Effect */}
-      <div className={`absolute inset-0 bg-gradient-to-r from-brand-green/20 to-green-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>
+      <div className={`absolute inset-0 bg-gradient-to-r from-brand-orange/20 to-brand-yellow/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>
 
       {/* Animated Border Effect */}
-      <div className="absolute inset-0 border-2 border-brand-green/0 group-hover:border-brand-green/50 transition-all duration-500"></div>
+      <div className="absolute inset-0 border-2 border-brand-orange/0 group-hover:border-brand-orange/50 transition-all duration-500"></div>
 
       <div className="relative overflow-hidden">
         <div className="relative h-64 overflow-hidden">
@@ -58,7 +58,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, delay = 0 }) => {
 
           {/* Category Badge */}
           <motion.span
-            className="absolute top-4 left-4 bg-brand-green text-dark-bg text-xs font-bold font-orbitron uppercase px-4 py-2 shadow-lg"
+            className="absolute top-4 left-4 bg-brand-orange text-dark-bg text-xs font-bold font-heading uppercase px-4 py-2 shadow-lg"
             whileHover={{ scale: 1.05 }}
           >
             {post.category}
@@ -66,7 +66,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, delay = 0 }) => {
 
           {/* Reading Time Badge */}
           <motion.div
-            className="absolute top-4 right-4 bg-dark-bg/80 backdrop-blur-sm text-brand-green text-xs font-orbitron px-3 py-2 flex items-center gap-2"
+            className="absolute top-4 right-4 bg-dark-bg/80 backdrop-blur-sm text-brand-orange text-xs font-heading px-3 py-2 flex items-center gap-2"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: isIntersecting ? 1 : 0, x: isIntersecting ? 0 : 20 }}
             transition={{ delay: delay / 1000 + 0.3 }}
@@ -81,8 +81,8 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, delay = 0 }) => {
 
       <div className="p-6 flex flex-col relative z-10">
         <motion.h3
-          className="text-2xl font-bold text-white mb-3 font-orbitron transition-colors line-clamp-2"
-          animate={{ color: isHovered ? '#4ade80' : '#ffffff' }}
+          className="text-2xl font-bold text-white mb-3 font-heading transition-colors line-clamp-2"
+          animate={{ color: isHovered ? '#FF6B35' : '#ffffff' }}
           transition={{ duration: 0.3 }}
         >
           {post.title}
@@ -98,19 +98,19 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, delay = 0 }) => {
               <img
                 src={post.author.avatarUrl}
                 alt={post.author.name}
-                className="w-10 h-10 rounded-full border-2 border-gray-700 group-hover:border-brand-green transition-colors duration-300"
+                className="w-10 h-10 rounded-full border-2 border-gray-700 group-hover:border-brand-orange transition-colors duration-300"
               />
-              <div className="absolute inset-0 rounded-full bg-brand-green/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 rounded-full bg-brand-orange/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div>
-              <p className="font-semibold text-gray-300 font-orbitron text-xs">{post.author.name}</p>
+              <p className="font-semibold text-gray-300 font-heading text-xs">{post.author.name}</p>
               <p className="text-gray-500 text-xs">{post.date}</p>
             </div>
           </div>
 
           {/* Read More Arrow */}
           <motion.div
-            className="flex items-center gap-2 text-brand-green font-orbitron font-bold text-sm"
+            className="flex items-center gap-2 text-brand-orange font-heading font-bold text-sm"
             animate={{ x: isHovered ? 5 : 0 }}
             transition={{ duration: 0.3 }}
           >
@@ -124,7 +124,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, delay = 0 }) => {
 
       {/* Decorative Corner Element */}
       <motion.div
-        className="absolute bottom-0 right-0 w-20 h-20 bg-brand-green/10 transform rotate-45 translate-x-10 translate-y-10"
+        className="absolute bottom-0 right-0 w-20 h-20 bg-brand-orange/10 transform rotate-45 translate-x-10 translate-y-10"
         animate={{
           x: isHovered ? 0 : 40,
           y: isHovered ? 0 : 40,

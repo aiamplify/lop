@@ -69,7 +69,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
               {/* Animated gradient overlay */}
               <div className="absolute inset-0 opacity-30">
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-brand-green/20 via-transparent to-brand-green/10"
+                  className="absolute inset-0 bg-gradient-to-br from-brand-orange/20 via-transparent to-brand-orange/10"
                   animate={{
                     scale: [1, 1.1, 1],
                     opacity: [0.3, 0.5, 0.3],
@@ -84,7 +84,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
               {/* Glowing border effect */}
               <div className="absolute inset-0 rounded-2xl">
-                <div className="absolute inset-0 rounded-2xl border border-brand-green/30 blur-sm" />
+                <div className="absolute inset-0 rounded-2xl border border-brand-orange/30 blur-sm" />
               </div>
 
               {/* Close button */}
@@ -96,7 +96,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 whileTap={{ scale: 0.9 }}
               >
                 <div className="relative">
-                  <div className="absolute inset-0 bg-brand-green/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-brand-orange/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity" />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 relative"

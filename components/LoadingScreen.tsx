@@ -45,7 +45,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
               transition={{ duration: 0.5, type: 'spring' }}
             >
               <motion.div
-                className="text-6xl font-orbitron font-bold text-brand-green"
+                className="text-6xl font-heading font-bold text-brand-orange"
                 animate={{
                   textShadow: [
                     '0 0 20px rgba(0, 255, 153, 0.5)',
@@ -66,7 +66,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
             {/* Progress Bar */}
             <div className="w-64 h-1 bg-gray-800 rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-gradient-to-r from-brand-green to-green-400"
+                className="h-full bg-gradient-to-r from-brand-orange to-green-400"
                 initial={{ width: 0 }}
                 animate={{ width: `${Math.min(progress, 100)}%` }}
                 transition={{ duration: 0.2 }}
@@ -75,7 +75,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
 
             {/* Progress Text */}
             <motion.div
-              className="mt-4 text-gray-400 font-orbitron text-sm"
+              className="mt-4 text-gray-400 font-heading text-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
