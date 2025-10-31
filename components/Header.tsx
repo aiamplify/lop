@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-interface HeaderProps {
-  onGetQuoteClick: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ onGetQuoteClick }) => {
+const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [route, setRoute] = useState(window.location.hash);
   const { scrollY } = useScroll();
@@ -35,20 +31,17 @@ const Header: React.FC<HeaderProps> = ({ onGetQuoteClick }) => {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
-  
+
   const handleHashNav = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
     e.preventDefault();
     window.location.hash = hash;
   };
 
-  const isSubPage = route.startsWith('#/blog') || route === '#/about' || route.startsWith('#/projects') || route.startsWith('#/services');
-
-  const navItems = [
-    ...(isSubPage ? [{ label: 'Home', hash: '' }] : []),
-    { label: 'Services', hash: '/services' },
-    { label: 'Projects', hash: '/projects' },
-    { label: 'About', hash: '/about' },
-    { label: 'Blog', hash: '/blog' },
+  const categories = [
+    'Design Trends',
+    'Tutorial',
+    'Opinion',
+    'Branding',
   ];
 
   return (
@@ -90,24 +83,42 @@ const Header: React.FC<HeaderProps> = ({ onGetQuoteClick }) => {
               transition={{ duration: 2, repeat: Infinity }}
             />
             <span className="text-white group-hover:text-brand-green transition-colors duration-300">
-              Quantum Canvas
+              Quantum Insights
             </span>
           </a>
         </motion.div>
 
-        <nav className="hidden md:flex space-x-8 items-center">
-          {navItems.map((item, index) => (
+        <nav className="hidden md:flex space-x-6 items-center">
+          <motion.a
+            href="#"
+            onClick={(e) => handleHashNav(e, '')}
+            className="relative text-gray-300 hover:text-brand-green transition-colors duration-300 font-medium cursor-hover"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0 }}
+            whileHover={{ y: -2 }}
+          >
+            Home
+            <motion.div
+              className="absolute -bottom-1 left-0 h-0.5 bg-brand-green"
+              initial={{ width: 0 }}
+              whileHover={{ width: '100%' }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.a>
+
+          {categories.map((category, index) => (
             <motion.a
-              key={item.hash}
-              href={`#${item.hash}`}
-              onClick={(e) => handleHashNav(e, item.hash)}
+              key={category}
+              href={`#/category/${encodeURIComponent(category)}`}
+              onClick={(e) => handleHashNav(e, `/category/${encodeURIComponent(category)}`)}
               className="relative text-gray-300 hover:text-brand-green transition-colors duration-300 font-medium cursor-hover"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: (index + 1) * 0.1 }}
               whileHover={{ y: -2 }}
             >
-              {item.label}
+              {category}
               <motion.div
                 className="absolute -bottom-1 left-0 h-0.5 bg-brand-green"
                 initial={{ width: 0 }}
@@ -118,31 +129,14 @@ const Header: React.FC<HeaderProps> = ({ onGetQuoteClick }) => {
           ))}
 
           <motion.a
-            href="#contact"
-            onClick={(e) => handleScrollTo(e, 'contact')}
-            className="relative text-gray-300 hover:text-brand-green transition-colors duration-300 font-medium cursor-hover"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: navItems.length * 0.1 }}
-            whileHover={{ y: -2 }}
-          >
-            Contact
-            <motion.div
-              className="absolute -bottom-1 left-0 h-0.5 bg-brand-green"
-              initial={{ width: 0 }}
-              whileHover={{ width: '100%' }}
-              transition={{ duration: 0.3 }}
-            />
-          </motion.a>
-
-          <motion.button
-            onClick={onGetQuoteClick}
-            className="relative bg-transparent border-2 border-brand-green text-brand-green px-6 py-2 font-orbitron font-bold overflow-hidden group cursor-hover"
+            href="#subscribe"
+            onClick={(e) => handleScrollTo(e, 'subscribe')}
+            className="relative bg-transparent border-2 border-brand-green text-brand-green px-5 py-1.5 font-orbitron font-bold overflow-hidden group cursor-hover text-sm"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: (navItems.length + 1) * 0.1 }}
+            transition={{ delay: (categories.length + 1) * 0.1 }}
           >
             <motion.div
               className="absolute inset-0 bg-brand-green"
@@ -151,9 +145,9 @@ const Header: React.FC<HeaderProps> = ({ onGetQuoteClick }) => {
               transition={{ duration: 0.3 }}
             />
             <span className="relative z-10 group-hover:text-dark-bg transition-colors duration-300">
-              Get Quote
+              Subscribe
             </span>
-          </motion.button>
+          </motion.a>
         </nav>
 
         <motion.button
