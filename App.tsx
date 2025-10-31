@@ -2,22 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Projects from './components/Projects';
-import ProjectsPage from './components/ProjectsPage';
-import ProjectDetail from './components/ProjectDetail';
 import Blog from './components/Blog';
 import Footer from './components/Footer';
 import BlogPostDetail from './components/BlogPostDetail';
-import About from './components/About';
 import { blogData } from './data/blogData';
-import { projectsData } from './data/projectsData';
-import RecentBlog from './components/RecentBlog';
-import Modal from './components/Modal';
-import ContactForm from './components/ContactForm';
-import Services from './components/Services';
-import ServiceDetail from './components/ServiceDetail';
-import { servicesData } from './data/servicesData';
-import ServicesPageOverhauled from './components/services/ServicesPageOverhauled';
 import CustomCursor from './components/CustomCursor';
 import ParticleBackground from './components/ParticleBackground';
 import LoadingScreen from './components/LoadingScreen';
@@ -26,7 +14,6 @@ import { pageTransition } from './utils/animations';
 
 const App: React.FC = () => {
   const [route, setRoute] = useState(window.location.hash);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -46,36 +33,8 @@ const App: React.FC = () => {
   }, []);
 
   const renderContent = () => {
-    // New Services Page Route
-    if (route === '#/services') {
-      return <ServicesPageOverhauled />;
-    }
-
-    // Service detail route: #/services/:id
-    if (route.startsWith('#/services/')) {
-      const serviceId = parseInt(route.split('/')[2], 10);
-      const service = servicesData.find((s) => s.id === serviceId);
-      if (service) {
-        return <ServiceDetail service={service} />;
-      }
-    }
-
-    // Project detail route: #/projects/:id
-    if (route.startsWith('#/projects/')) {
-      const projectId = parseInt(route.split('/')[2], 10);
-      const project = projectsData.find((p) => p.id === projectId);
-      if (project) {
-        return <ProjectDetail project={project} />;
-      }
-    }
-
-    // Projects index route
-    if (route === '#/projects') {
-      return <ProjectsPage />;
-    }
-
-    // Blog detail route
-    if (route.startsWith('#/blog/')) {
+    // Blog post detail route
+    if (route.startsWith('#/post/')) {
       const postId = parseInt(route.split('/')[2], 10);
       const post = blogData.find((p) => p.id === postId);
       if (post) {
@@ -83,22 +42,17 @@ const App: React.FC = () => {
       }
     }
 
-    // Blog index
-    if (route === '#/blog') {
-      return <Blog />;
+    // Category filter route
+    if (route.startsWith('#/category/')) {
+      const category = decodeURIComponent(route.split('/')[2]);
+      return <Blog filterCategory={category} />;
     }
 
-    if (route === '#/about') {
-      return <About />;
-    }
-
-    // Home
+    // Home - Blog landing page
     return (
       <>
         <Hero />
-        <Services />
-        <RecentBlog />
-        <Projects />
+        <Blog />
       </>
     );
   };
@@ -149,7 +103,7 @@ const App: React.FC = () => {
           </div>
 
           <div className="relative z-10 flex flex-col min-h-screen">
-            <Header onGetQuoteClick={() => setIsModalOpen(true)} />
+            <Header />
 
             <AnimatePresence mode="wait">
               <motion.main
@@ -166,16 +120,6 @@ const App: React.FC = () => {
 
             <Footer />
           </div>
-
-          <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <div className="text-center">
-              <h2 className="text-3xl font-orbitron font-bold text-white mb-4">Get a Quote</h2>
-              <p className="text-gray-400 mb-8">
-                Let's build the future together. Fill out the form below to get started.
-              </p>
-            </div>
-            <ContactForm />
-          </Modal>
         </div>
       )}
     </>
