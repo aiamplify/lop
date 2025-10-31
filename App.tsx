@@ -6,7 +6,9 @@ import Blog from './components/Blog';
 import Footer from './components/Footer';
 import BlogPostDetail from './components/BlogPostDetail';
 import Resources from './components/Resources';
+import ResourceDetail from './components/ResourceDetail';
 import { blogData } from './data/blogData';
+import { resourcesData } from './data/resourcesData';
 import CustomCursor from './components/CustomCursor';
 import ParticleBackground from './components/ParticleBackground';
 import LoadingScreen from './components/LoadingScreen';
@@ -37,6 +39,15 @@ const App: React.FC = () => {
     // Resources page route
     if (route === '#/resources') {
       return <Resources />;
+    }
+
+    // Resource detail route
+    if (route.startsWith('#/resource/')) {
+      const resourceId = parseInt(route.split('/')[2], 10);
+      const resource = resourcesData.find((r) => r.id === resourceId);
+      if (resource) {
+        return <ResourceDetail resource={resource} />;
+      }
     }
 
     // Blog post detail route

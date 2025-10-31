@@ -1,200 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn, staggerContainer } from '../utils/animations';
-
-interface ResourceItem {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  thumbnail?: string;
-  downloadUrl?: string;
-  type: 'video' | 'pdf' | 'template' | 'image' | 'prompt';
-  tags: string[];
-  duration?: string;
-  fileSize?: string;
-}
+import { resourcesData } from '../data/resourcesData';
 
 const Resources: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // Mock data for resources
-  const resources: ResourceItem[] = [
-    // Videos
-    {
-      id: 1,
-      title: 'AI Automation for Construction Projects',
-      description: 'Learn how to automate repetitive tasks in construction management using AI tools.',
-      category: 'Video',
-      type: 'video',
-      thumbnail: 'https://picsum.photos/seed/video1/800/450',
-      downloadUrl: '#',
-      tags: ['AI', 'Automation', 'Construction'],
-      duration: '15:30',
-    },
-    {
-      id: 2,
-      title: 'Getting Started with N8N Workflows',
-      description: 'Complete tutorial on setting up your first N8N automation workflow for contractor management.',
-      category: 'Video',
-      type: 'video',
-      thumbnail: 'https://picsum.photos/seed/video2/800/450',
-      downloadUrl: '#',
-      tags: ['N8N', 'Workflow', 'Tutorial'],
-      duration: '22:45',
-    },
-    {
-      id: 3,
-      title: 'ChatGPT for Project Documentation',
-      description: 'Master the art of using ChatGPT to generate professional project documentation.',
-      category: 'Video',
-      type: 'video',
-      thumbnail: 'https://picsum.photos/seed/video3/800/450',
-      downloadUrl: '#',
-      tags: ['ChatGPT', 'Documentation', 'AI'],
-      duration: '18:20',
-    },
-    // PDFs
-    {
-      id: 4,
-      title: 'AI Tools Handbook for Contractors',
-      description: 'Comprehensive guide covering 50+ AI tools specifically designed for construction and contracting businesses.',
-      category: 'PDF',
-      type: 'pdf',
-      thumbnail: 'https://picsum.photos/seed/pdf1/800/450',
-      downloadUrl: '#',
-      tags: ['Guide', 'AI Tools', 'Reference'],
-      fileSize: '12.5 MB',
-    },
-    {
-      id: 5,
-      title: 'Prompt Engineering Masterclass',
-      description: 'Complete guide to writing effective prompts for AI models to get the best results for your business.',
-      category: 'PDF',
-      type: 'pdf',
-      thumbnail: 'https://picsum.photos/seed/pdf2/800/450',
-      downloadUrl: '#',
-      tags: ['Prompts', 'Guide', 'AI'],
-      fileSize: '8.2 MB',
-    },
-    {
-      id: 6,
-      title: 'Contract Templates & AI Optimization',
-      description: 'Legal contract templates optimized for AI processing and document management systems.',
-      category: 'PDF',
-      type: 'pdf',
-      thumbnail: 'https://picsum.photos/seed/pdf3/800/450',
-      downloadUrl: '#',
-      tags: ['Contracts', 'Legal', 'Templates'],
-      fileSize: '5.8 MB',
-    },
-    // N8N Templates
-    {
-      id: 7,
-      title: 'Lead Generation Automation',
-      description: 'N8N workflow template to automatically capture and qualify leads from multiple sources.',
-      category: 'N8N Template',
-      type: 'template',
-      thumbnail: 'https://picsum.photos/seed/n8n1/800/450',
-      downloadUrl: '#',
-      tags: ['N8N', 'Lead Gen', 'Automation'],
-    },
-    {
-      id: 8,
-      title: 'Invoice Processing & Payment Tracking',
-      description: 'Automated workflow for processing invoices, sending reminders, and tracking payments.',
-      category: 'N8N Template',
-      type: 'template',
-      thumbnail: 'https://picsum.photos/seed/n8n2/800/450',
-      downloadUrl: '#',
-      tags: ['N8N', 'Finance', 'Automation'],
-    },
-    {
-      id: 9,
-      title: 'Client Communication Hub',
-      description: 'Centralized communication workflow integrating email, SMS, and project management tools.',
-      category: 'N8N Template',
-      type: 'template',
-      thumbnail: 'https://picsum.photos/seed/n8n3/800/450',
-      downloadUrl: '#',
-      tags: ['N8N', 'Communication', 'CRM'],
-    },
-    {
-      id: 10,
-      title: 'Project Status Reporting',
-      description: 'Automatically generate and send weekly project status reports to clients and stakeholders.',
-      category: 'N8N Template',
-      type: 'template',
-      thumbnail: 'https://picsum.photos/seed/n8n4/800/450',
-      downloadUrl: '#',
-      tags: ['N8N', 'Reporting', 'Project Management'],
-    },
-    // Prompts
-    {
-      id: 11,
-      title: 'Bid Proposal Generator Prompts',
-      description: 'Collection of ChatGPT prompts for creating competitive and professional bid proposals.',
-      category: 'Prompt Library',
-      type: 'prompt',
-      downloadUrl: '#',
-      tags: ['Prompts', 'Bidding', 'ChatGPT'],
-    },
-    {
-      id: 12,
-      title: 'Safety Inspection Report Prompts',
-      description: 'Pre-built prompts for generating thorough safety inspection reports and checklists.',
-      category: 'Prompt Library',
-      type: 'prompt',
-      downloadUrl: '#',
-      tags: ['Prompts', 'Safety', 'Compliance'],
-    },
-    {
-      id: 13,
-      title: 'Client Email Response Templates',
-      description: 'AI prompts for drafting professional responses to common client inquiries and requests.',
-      category: 'Prompt Library',
-      type: 'prompt',
-      downloadUrl: '#',
-      tags: ['Prompts', 'Communication', 'Email'],
-    },
-    {
-      id: 14,
-      title: 'Material Cost Estimation Prompts',
-      description: 'Prompts designed to help estimate material costs and create accurate project budgets.',
-      category: 'Prompt Library',
-      type: 'prompt',
-      downloadUrl: '#',
-      tags: ['Prompts', 'Budgeting', 'Estimation'],
-    },
-    // Images & Graphics
-    {
-      id: 15,
-      title: 'AI Workflow Diagrams Pack',
-      description: 'High-resolution infographics showing AI automation workflows for contractors.',
-      category: 'Graphics',
-      type: 'image',
-      thumbnail: 'https://picsum.photos/seed/graphic1/800/450',
-      downloadUrl: '#',
-      tags: ['Graphics', 'Diagrams', 'Visual'],
-      fileSize: '25.3 MB',
-    },
-    {
-      id: 16,
-      title: 'Social Media Graphics Bundle',
-      description: 'Editable Canva templates for promoting your AI-powered contractor services.',
-      category: 'Graphics',
-      type: 'image',
-      thumbnail: 'https://picsum.photos/seed/graphic2/800/450',
-      downloadUrl: '#',
-      tags: ['Graphics', 'Marketing', 'Social Media'],
-      fileSize: '18.7 MB',
-    },
-  ];
-
   const categories = ['All', 'Video', 'PDF', 'N8N Template', 'Prompt Library', 'Graphics'];
 
-  const filteredResources = resources.filter(resource => {
+  const filteredResources = resourcesData.filter(resource => {
     const matchesCategory = selectedCategory === 'All' || resource.category === selectedCategory;
     const matchesSearch = searchQuery === '' ||
       resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -218,6 +33,11 @@ const Resources: React.FC = () => {
       default:
         return '📦';
     }
+  };
+
+  const handleResourceClick = (e: React.MouseEvent<HTMLAnchorElement>, resourceId: number) => {
+    e.preventDefault();
+    window.location.hash = `/resource/${resourceId}`;
   };
 
   return (
@@ -250,19 +70,19 @@ const Resources: React.FC = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12"
           >
             <div className="bg-gradient-to-br from-gray-900/80 to-gray-900/50 border border-gray-700/30 p-6">
-              <p className="text-4xl font-orbitron font-bold text-brand-green mb-2">{resources.filter(r => r.type === 'video').length}</p>
+              <p className="text-4xl font-orbitron font-bold text-brand-green mb-2">{resourcesData.filter(r => r.type === 'video').length}</p>
               <p className="text-gray-400 text-sm">Video Tutorials</p>
             </div>
             <div className="bg-gradient-to-br from-gray-900/80 to-gray-900/50 border border-gray-700/30 p-6">
-              <p className="text-4xl font-orbitron font-bold text-brand-green mb-2">{resources.filter(r => r.type === 'template').length}</p>
+              <p className="text-4xl font-orbitron font-bold text-brand-green mb-2">{resourcesData.filter(r => r.type === 'template').length}</p>
               <p className="text-gray-400 text-sm">N8N Templates</p>
             </div>
             <div className="bg-gradient-to-br from-gray-900/80 to-gray-900/50 border border-gray-700/30 p-6">
-              <p className="text-4xl font-orbitron font-bold text-brand-green mb-2">{resources.filter(r => r.type === 'prompt').length}</p>
+              <p className="text-4xl font-orbitron font-bold text-brand-green mb-2">{resourcesData.filter(r => r.type === 'prompt').length}</p>
               <p className="text-gray-400 text-sm">Prompt Libraries</p>
             </div>
             <div className="bg-gradient-to-br from-gray-900/80 to-gray-900/50 border border-gray-700/30 p-6">
-              <p className="text-4xl font-orbitron font-bold text-brand-green mb-2">{resources.filter(r => r.type === 'pdf').length}</p>
+              <p className="text-4xl font-orbitron font-bold text-brand-green mb-2">{resourcesData.filter(r => r.type === 'pdf').length}</p>
               <p className="text-gray-400 text-sm">PDF Guides</p>
             </div>
           </motion.div>
@@ -329,9 +149,11 @@ const Resources: React.FC = () => {
             animate="show"
           >
             {filteredResources.map((resource, index) => (
-              <motion.div
+              <motion.a
                 key={resource.id}
-                className="group bg-gradient-to-br from-gray-900/80 to-gray-900/50 border border-gray-700/30 overflow-hidden cursor-pointer"
+                href={`#/resource/${resource.id}`}
+                onClick={(e) => handleResourceClick(e, resource.id)}
+                className="group bg-gradient-to-br from-gray-900/80 to-gray-900/50 border border-gray-700/30 overflow-hidden cursor-pointer block"
                 whileHover={{ scale: 1.02, y: -5 }}
                 transition={{ duration: 0.3 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -368,13 +190,13 @@ const Resources: React.FC = () => {
                   <h3 className="text-xl font-orbitron font-bold text-white mb-3 group-hover:text-brand-green transition-colors">
                     {resource.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                  <p className="text-gray-400 text-sm mb-4 leading-relaxed line-clamp-3">
                     {resource.description}
                   </p>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {resource.tags.map((tag) => (
+                    {resource.tags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
                         className="px-2 py-1 bg-gray-800/50 text-gray-400 text-xs border border-gray-700/50"
@@ -384,28 +206,23 @@ const Resources: React.FC = () => {
                     ))}
                   </div>
 
-                  {/* Download Button */}
+                  {/* View Details */}
                   <div className="flex items-center justify-between">
                     {resource.fileSize && (
                       <span className="text-xs text-gray-500">{resource.fileSize}</span>
                     )}
-                    <motion.a
-                      href={resource.downloadUrl}
-                      className="ml-auto px-4 py-2 bg-brand-green text-dark-bg font-orbitron font-bold text-sm hover:bg-green-400 transition-colors flex items-center gap-2"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {resource.type === 'video' ? 'Watch' : 'Download'}
+                    <div className="ml-auto text-brand-green font-orbitron font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                      View Details
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </motion.a>
+                    </div>
                   </div>
                 </div>
 
                 {/* Hover Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-green/0 to-brand-green/0 group-hover:from-brand-green/5 group-hover:to-brand-green/10 transition-all duration-500 pointer-events-none" />
-              </motion.div>
+              </motion.a>
             ))}
           </motion.div>
         ) : (
