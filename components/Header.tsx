@@ -24,6 +24,11 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  const handleHashNav = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    e.preventDefault();
+    window.location.hash = hash;
+  };
+
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
@@ -31,18 +36,6 @@ const Header: React.FC = () => {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
-
-  const handleHashNav = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
-    e.preventDefault();
-    window.location.hash = hash;
-  };
-
-  const categories = [
-    'Design Trends',
-    'Tutorial',
-    'Opinion',
-    'Branding',
-  ];
 
   return (
     <motion.header
@@ -88,7 +81,7 @@ const Header: React.FC = () => {
           </a>
         </motion.div>
 
-        <nav className="hidden md:flex space-x-6 items-center">
+        <nav className="hidden md:flex space-x-8 items-center">
           <motion.a
             href="#"
             onClick={(e) => handleHashNav(e, '')}
@@ -98,7 +91,7 @@ const Header: React.FC = () => {
             transition={{ delay: 0 }}
             whileHover={{ y: -2 }}
           >
-            Home
+            Blog
             <motion.div
               className="absolute -bottom-1 left-0 h-0.5 bg-brand-green"
               initial={{ width: 0 }}
@@ -107,26 +100,23 @@ const Header: React.FC = () => {
             />
           </motion.a>
 
-          {categories.map((category, index) => (
-            <motion.a
-              key={category}
-              href={`#/category/${encodeURIComponent(category)}`}
-              onClick={(e) => handleHashNav(e, `/category/${encodeURIComponent(category)}`)}
-              className="relative text-gray-300 hover:text-brand-green transition-colors duration-300 font-medium cursor-hover"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: (index + 1) * 0.1 }}
-              whileHover={{ y: -2 }}
-            >
-              {category}
-              <motion.div
-                className="absolute -bottom-1 left-0 h-0.5 bg-brand-green"
-                initial={{ width: 0 }}
-                whileHover={{ width: '100%' }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.a>
-          ))}
+          <motion.a
+            href="#/resources"
+            onClick={(e) => handleHashNav(e, '/resources')}
+            className="relative text-gray-300 hover:text-brand-green transition-colors duration-300 font-medium cursor-hover"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            whileHover={{ y: -2 }}
+          >
+            Resources
+            <motion.div
+              className="absolute -bottom-1 left-0 h-0.5 bg-brand-green"
+              initial={{ width: 0 }}
+              whileHover={{ width: '100%' }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.a>
 
           <motion.a
             href="#subscribe"
@@ -136,7 +126,7 @@ const Header: React.FC = () => {
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: (categories.length + 1) * 0.1 }}
+            transition={{ delay: 0.2 }}
           >
             <motion.div
               className="absolute inset-0 bg-brand-green"

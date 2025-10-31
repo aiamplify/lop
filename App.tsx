@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Blog from './components/Blog';
 import Footer from './components/Footer';
 import BlogPostDetail from './components/BlogPostDetail';
+import Resources from './components/Resources';
 import { blogData } from './data/blogData';
 import CustomCursor from './components/CustomCursor';
 import ParticleBackground from './components/ParticleBackground';
@@ -33,6 +34,11 @@ const App: React.FC = () => {
   }, []);
 
   const renderContent = () => {
+    // Resources page route
+    if (route === '#/resources') {
+      return <Resources />;
+    }
+
     // Blog post detail route
     if (route.startsWith('#/post/')) {
       const postId = parseInt(route.split('/')[2], 10);
