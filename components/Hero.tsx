@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
             onMouseMove={handleMouseMove}
             onMouseLeave={() => setMousePosition({ x: 0, y: 0 })}
           >
-            Quantum{' '}
+            AI for{' '}
             <motion.span
               className="text-brand-green inline-block relative"
               animate={{
@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
                 rotateY: mousePosition.x * 0.3,
               }}
             >
-              Insights
+              Contractors
             </motion.span>
           </motion.h1>
         </motion.div>
