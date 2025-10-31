@@ -17,7 +17,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, delay = 0 }) => {
 
   const handleNavigate = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    window.location.hash = `#/blog/${post.id}`;
+    window.location.hash = `#/post/${post.id}`;
   };
 
   // Calculate reading time (assuming 200 words per minute)
@@ -25,7 +25,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, delay = 0 }) => {
 
   return (
     <motion.a
-      href={`#/blog/${post.id}`}
+      href={`#/post/${post.id}`}
       onClick={handleNavigate}
       ref={ref}
       onMouseEnter={() => setIsHovered(true)}
